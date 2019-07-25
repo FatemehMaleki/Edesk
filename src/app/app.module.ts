@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material';
+import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import {MatPaginatorModule} from '@angular/material';
     SharedModule,
     MatPaginatorModule,
     FormsModule,
-
+    NgxSpinnerModule,
 
   ],
   exports:[],

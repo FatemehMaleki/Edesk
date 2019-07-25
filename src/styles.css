@@ -10,70 +10,7 @@
   font-weight: normal;
   font-style: normal
 }
-@font-face {
-  font-family: 'BMitraBold';
-  src: url('./assets/fonts/BMitraBold.eot');
-  src: url('./assets/fonts/BMitraBold.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/BMitraBold.woff') format('woff'),
-  url('./assets/fonts/BMitraBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'BRoya';
-  src: url('./assets/fonts/BRoya.eot');
-  src: url('./assets/fonts/BRoya.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/BRoya.woff') format('woff'),
-  url('./assets/fonts/BRoya.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'BTitr';
-  src: url('./assets/fonts/BTitr.eot');
-  src: url('./assets/fonts/BTitr.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/BTitr.woff') format('woff'),
-  url('./assets/fonts/BTitr.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'BTitrTGE';
-  src: url('./assets/fonts/BTitrTGE.eot');
-  src: url('./assets/fonts/BTitrTGE.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/BTitrTGE.woff') format('woff'),
-  url('./assets/fonts/BTitrTGE.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Iransans-Light';
-  src: url('./assets/fonts/Iransans-Light.eot');
-  src: url('./assets/fonts/Iransans-Light.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/Iransans-Light.woff') format('woff'),
-  url('./assets/fonts/Iransans-Light.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Iransans-Bold';
-  src: url('./assets/fonts/Iransans-Bold.eot');
-  src: url('./assets/fonts/Iransans-Bold.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/Iransans-Bold.woff') format('woff'),
-  url('./assets/fonts/Iransans-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Iransans';
-  src: url('./assets/fonts/Iransans.eot');
-  src: url('./assets/fonts/Iransans.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/Iransans.woff') format('woff'),
-  url('./assets/fonts/Iransans.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
 @font-face {
   font-family: 'IRANSansWeb';
   src: url('./assets/fonts/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
