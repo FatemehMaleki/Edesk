@@ -1,0 +1,235 @@
+<section id="service" class="service angle ras-card border border-success">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-2">
+        <div class="animated bounceInLeft  delay-05s">
+          <div class="service-content text-center">
+            <!--<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>-->
+            <!--<h3>خدمات مالیاتی</h3>-->
+            <div class="media block-6 d-block text-center">
+              <div class="icon justify-content-center align-items-center" [routerLink]="['moshavere']">
+
+                <!--<span class="flaticon-reading "></span>-->
+                <br>
+                <img src="./assets/img/20/consulting.png" height="70" width="100">
+
+                <h5 class="heading">مشاوره خدمت</h5>
+              </div>
+              <div class="media-body p-2 mt-3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ End first service -->
+      </div>
+      <div class="col-md-5 img-background">
+        <div class="col-md-6  animated bounceInRight  delay-05s">
+          <div class="service-content text-center">
+            <!--<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>-->
+            <!--<h3>خدمات مالیاتی</h3>-->
+            <div class="media block-6 d-block text-center">
+
+              <div class="icon  justify-content-center align-items-center" [routerLink]="['nazarsanji']">
+                <!--<span class="flaticon-reading "></span>-->
+                <br>
+                <img src="./assets/img/20/proposal.png" height="70" width="100">
+                <h5 class="heading">نظرسنجی خدمات</h5>
+              </div>
+              <div class="media-body p-2 mt-3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6  animated bounceInRight  delay-05s ">
+          <div class="service-content text-center">
+            <!--<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>-->
+            <!--<h3>خدمات مالیاتی</h3>-->
+            <div class="media block-6 d-block text-center ">
+              <div class="icon  justify-content-center align-items-center" data-toggle="modal" data-target="#nazarsanji"
+                   (click)="clear()">
+
+                <!-- Modal -->
+                <br>
+
+                <img src="./assets/img/20/elections.png" height="70" width="100">
+                <h5 class="heading">مشارکت الکترونیک</h5>
+              </div>
+              <div class="media-body p-2 mt-3">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-5">
+
+        <div class="col-md-6 float-left animated bounceInLeft  delay-05s">
+          <div class="service-content text-center">
+            <!--<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>-->
+            <!--<h3>خدمات مالیاتی</h3>-->
+            <div class="media block-6 d-block text-center">
+
+              <div class="icon justify-content-center  align-items-center" [routerLink]="['shekait']">
+                <!--<span class="flaticon-reading "></span>-->
+                <br>
+                <img src="./assets/img/20/rejected.png" height="70" width="100">
+                <h5 class="heading">شکایات وانتقادات</h5>
+              </div>
+              <div class="media-body p-2 mt-3">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ End first service -->
+
+        <div class="col-md-6 float-left animated bounceInLeft  delay-05s">
+          <div class="service-content text-center">
+            <!--<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>-->
+            <!--<h3>خدمات مالیاتی</h3>-->
+            <div class="media block-6 d-block text-center">
+
+              <div class="icon justify-content-center align-items-center" [routerLink]="['pishnehad']">
+                <!--<span class="flaticon-reading "></span>-->
+                <br>
+                <img src="./assets/img/20/survey.png" height="70" width="100">
+                <h5 class="heading">پیشنهاد بهبود ارائه خدمت</h5>
+              </div>
+              <!--<div class="media-body p-2 mt-3">-->
+              <!--</div>-->
+            </div>
+          </div>
+        </div>
+        <!--/ End first service -->
+
+      </div>
+
+    </div><!-- Content row end -->
+  </div>
+  <!--/ Container end -->
+</section>
+<!--/ Service box end -->
+
+
+<form [formGroup]="quetionForm">
+  <!-- The Modal نظرسنجی -->
+  <div class="modal fad" id="nazarsanji">
+    <div class="modal-dialog  modal-dialog-centered modal-notify modal-info" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header white-text">
+          <div class="row">
+            <div class="">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+              </button>
+            </div>
+            <h4 class="modal-title float-left">ثبت نظرسنجی میزخدمت</h4>
+
+          </div>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+          <h3 class="">{{question_onvan}} ؟</h3>
+
+          <mat-radio-group aria-label="Select an option" name="indexChecked" [(ngModel)]="indexChecked" formControlName="response" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.response.errors }">
+            <mat-radio-button value="1">{{stringResponse1}}</mat-radio-button>
+            <br>
+            <mat-radio-button value="2">{{stringResponse2}} </mat-radio-button>
+            <br>
+            <mat-radio-button value="3">{{stringResponse3}}</mat-radio-button>
+            <br>
+            <mat-radio-button value="4">{{stringResponse4}}</mat-radio-button>
+            <br>
+            <mat-radio-button value="5">{{stringResponse5}}</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <div *ngIf="submitted && f.response.errors" class="invalid-feedback">
+            <div *ngIf="f.response.errors.required">یکی از گزینه ها را انتخاب کنید</div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm" (click)="OnSubmit()">
+            ثبت نظر سنجی</button>
+
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#result"
+                  data-dismiss="modal">مشاهده نتایج</button>
+          <div class="alert alert-success fade show" *ngIf="SendSuccess" style="margin-bottom: -10px">
+            <strong>کاربر محترم نظر شما با موفقیت ثبت شد.</strong>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+
+            <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px"
+                    data-dismiss="modal">بستن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- The Modal مشاهده نتایج -->
+<div class="modal fad" id="result">
+  <div class="modal-dialog  modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <div class="row">
+          <div class="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+            </button>
+          </div>
+          <h4 class="modal-title">نتایج نظرسنجی</h4>
+        </div>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <!-- Blue -->
+        <h3>{{stringResponse1}}</h3>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar" style="width:70%">70%</div>
+        </div>
+
+        <!-- Green -->
+        <h3>{{stringResponse2}}</h3>
+
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-success" style="width:10%">10%</div>
+        </div>
+
+        <!-- Turquoise -->
+        <h3>{{stringResponse3}}</h3>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-info" style="width:10%">10%</div>
+        </div>
+
+        <!-- Orange -->
+        <h3>{{stringResponse4}}</h3>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-warning" style="width:5%;">5%</div>
+        </div>
+
+        <!-- Red -->
+        <h3>{{stringResponse5}}</h3>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-danger" style="width:5%">5%</div>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal مشاهده نتایج-->

@@ -1,0 +1,616 @@
+<!--<app-menubar></app-menubar>-->
+
+<h1 class=" text-white"> {{onvan}}</h1>
+
+
+<!-- Classic tabs -->
+<div class="classic-tabs mx-2  " style="margin-right: 200px">
+
+  <ul class="nav tabs-cyan border border-dark" id="myClassicTabOrange" role="tablist">
+    <li class="nav-item ml-5 animated bounceInRight delay-05s ">
+      <a class="nav-link  waves-light active show" id="profile-tab-classic-orange" data-toggle="tab"
+         href="#profile-classic-orange" role="tab" aria-controls="profile-classic-orange" aria-selected="true"><img
+              src="./assets/img/icon1/tv.png" style="height: 100px;width: 100px;margin-bottom: 3px"> <br><span>اطلاع
+          رسانی</span></a>
+    </li>
+    <li class="nav-item ml-5 animated bounceInRight delay-05s ">
+      <a class="nav-link waves-light" id="follow-tab-classic-orange" data-toggle="tab" href="#follow-classic-orange"
+         role="tab" aria-controls="follow-classic-orange" aria-selected="false"><img
+              src="./assets/img/moshtarek/darkhast2.png" style="height: 100px;width: 100px;margin-bottom: 3px"><br>درخواست
+        خدمت</a>
+    </li>
+    <li class="nav-item ml-5 animated bounceInRight delay-05s">
+      <a class="nav-link waves-light" id="contact-tab-classic-orange" data-toggle="tab" href="#contact-classic-orange">
+        <img src="./assets/img/pic-dolati/eraekhedmat1.png" style="height: 100px;width: 100px;margin-bottom: 3px"><br>ارائه
+        خدمت</a>
+
+    </li>
+    <li class="nav-item ml-5 animated bounceInRight delay-05s">
+      <a class="nav-link waves-light" id="ghavanin-tab-classic-orange" data-toggle="tab" href="#ghavanin-classic-orange"
+         role="tab" aria-controls="ghavanin-tab-classic-orange" aria-selected="false"><img
+              src="./assets/img/pic-dolati/ghavanin.png"
+              style="height: 100px;width: 100px;margin-bottom: 3px;margin-left: 40px"><br>قوانین و مقررات، پرسش های
+        متداول</a>
+    </li>
+  </ul>
+
+  <div class="tab-content card" id="myClassicTabContentOrange">
+    <div class="tab-pane fade active show" id="profile-classic-orange" role="tabpanel"
+         aria-labelledby="profile-tab-classic-orange">
+      <div class="row row-tabs animated bounceInRight delay-05s">
+
+
+
+        <div class="col-md-3">
+          <div class="panel panel-primary">
+            <a target="_blank" href="http://185.198.252.57/bpms/cdn/{{flowChartUrl}}.{{flowChartPassvand}}">
+              <div class="panel-body"><img src="./assets/img/moshtarek/shenase2.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+
+              <div class="panel-footer">چکیده خدمت <span style="color: #00C851;"><i
+                      class="fas fa-download fa-2x float-left"></i></span></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-primary">
+            <a  target="_blank" href="http://185.198.252.57/bpms/cdn/{{identityUrl}}.{{identityPassvand}}">
+              <div class="panel-body"><img src="./assets/img/moshtarek/abst2.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+
+              <div class="panel-footer"> شناسه خدمت <span style="color: #00C851;"><i
+                      class="fas fa-download fa-2x float-left"></i></span></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_tozihat">
+            <div class="panel-body"><img src="./assets/img/moshtarek/shahr2.png"
+                                         style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer">شرح مختصر خدمت </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_time">
+            <div class="panel-body">
+              <!--<div class="panel-header primary-color">-->
+              <!--روش ارائه خدمت-->
+              <!--</div>-->
+              <img src="./assets/img/moshtarek/ravesh2.png" style="height: 100px;width: 100px;margin-bottom: 3px">
+
+            </div>
+            <div class="panel-footer"> روش ارائه خدمت </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row row-tabs animated bounceInRight delay-05s">
+
+
+
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_formha">
+            <div class="panel-body"><img src="./assets/img/moshtarek/formha2.png"
+                                         style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer">فرم ها و مدارک مورد نیاز </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_address">
+            <!--<div class="panel-header primary-color">-->
+            <!--آدرس ارائه خدمت-->
+            <!--</div>-->
+            <div class="panel-body">
+
+              <img src="./assets/img/moshtarek/address2.png" style="height: 100px;width: 100px;margin-bottom: 3px">
+              <!--<br> {{addressMahalErae}}-->
+            </div>
+            <div class="panel-footer"> آدرس ارائه خدمت</div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_tamas">
+            <div class="panel-body"><img src="./assets/img/moshtarek/erahe2.png"
+                                         style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer">ارائه دهنده خدمت </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_zaman">
+            <div class="panel-body">
+              <!--<div class="panel-header primary-color">-->
+              <!--مدت زمان انجام خدمت-->
+              <!--</div>-->
+              <img src="./assets/img/moshtarek/zaman2.png" style="height: 100px;width: 100px;margin-bottom: 3px">
+              <!--<br>{{zamanAnjamKhedmat}}-->
+            </div>
+            <div class="panel-footer"> مدت زمان انجام خدمت</div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row row-tabs animated bounceInRight delay-05s">
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_hazineh">
+            <div class="panel-body">
+              <!--<div class="panel-header primary-color">-->
+              <!--هزینه های انجام خدمت-->
+              <!--</div>-->
+              <img src="./assets/img/pic-dolati/hazineh.jpg" style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer"> هزینه های انجام خدمت</div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_bayanieh">
+            <div class="panel-body">
+              <!--<div class="panel-header primary-color">-->
+              <!--بیانیه سطح توقع خدمت-->
+              <!--</div>-->
+
+              <img src="./assets/img/moshtarek/binahi2.png" style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer"> بیانیه سطح توافق خدمت</div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="follow-classic-orange" role="tabpanel" aria-labelledby="follow-tab-classic-orange">
+      <div class="row row-tabs  animated bounceInLeft delay-05s">
+        <div class="col-md-3" *ngIf="processUrl">
+          <div class="panel panel-primary">
+            <a href="{{processUrl}}">
+              <div class="panel-body"><img src="./assets/img/pic-dolati/webgah.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+            </a>
+            <div class="panel-footer">{{processUrlOnvan}}</div>
+          </div>
+        </div>
+        <div class="col-md-3" *ngIf="processUrl1">
+          <div class="panel panel-primary">
+            <a href="{{processUrl1}}">
+              <div class="panel-body"><img src="./assets/img/pic-dolati/webgah.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+            </a>
+            <div class="panel-footer">{{processUrlOnvan1}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade " id="contact-classic-orange" role="tabpanel"
+         aria-labelledby="contact-tab-classic-orange">
+      <div class="row row-tabs  animated bounceInRight delay-05s">
+        <div class="col-md-3" *ngIf="processUrl2">
+          <div class="panel panel-primary">
+            <a target="_blank" href="{{processUrl2}}">
+              <div class="panel-body"><img src="./assets/img/pic-dolati/webgah.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+            </a>
+            <div class="panel-footer">{{processUrlOnvan2}}</div>
+          </div>
+        </div>
+        <div class="col-md-3" *ngIf="processUrl3">
+          <div class="panel panel-primary">
+            <a target="_blank" href="{{processUrl3}}">
+              <div class="panel-body"><img src="./assets/img/pic-dolati/webgah.png"
+                                           style="height: 100px;width: 100px;margin-bottom: 3px">
+              </div>
+            </a>
+            <div class="panel-footer">{{processUrlOnvan3}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade " id="ghavanin-classic-orange" role="tabpanel"
+         aria-labelledby="ghavanin-tab-classic-orange">
+      <div class="row row-tabs  animated bounceInLeft delay-05s">
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_gardeshkar">
+            <div class="panel-body"><img src="./assets/img/pic-dolati/gardeshkar2.png"
+                                         style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer"> مراحل گردش کار</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_ghavanin">
+            <div class="panel-body"><img src="./assets/img/pic-dolati/ghavanin.png"
+                                         style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer">قوانین ومقررات</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-primary" data-toggle="modal" data-target="#modal_porsesh">
+            <!--<div class="panel-header primary-color">-->
+            <!--آدرس ارائه خدمت-->
+            <!--</div>-->
+            <div class="panel-body">
+
+              <img src="./assets/img/pic-dolati/porsesh.png" style="height: 100px;width: 100px;margin-bottom: 3px">
+            </div>
+            <div class="panel-footer">پرسش های متداول</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- Classic tabs -->
+
+<!-- The Modal پرسش های متداول -->
+<div class="modal fad" id="modal_porsesh">
+  <div class="modal-dialog   modal-dialog-centered modal-notify modal-info modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">پرسش های متداول</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word" *ngIf="request">
+        <ul style=" direction:rtl;list-style:none;text-align: justify;text-justify: inter-word"
+            *ngFor="let j of request;let i = index">
+          <h4 style="color: red">سوال:{{j}} </h4>
+          <h4 style="color: blue">پاسخ:<div [innerHTML]="response[i]"></div>
+          </h4>
+        </ul>
+        <h2 *ngIf="exsistQuestion"> پرسش و پاسخی هنوز طرح نشده است</h2>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal پرسش های متداول-->
+<!-- The Modal قوانیم و مقررات -->
+<div class="modal fad" id="modal_ghavanin">
+  <div class="modal-dialog   modal-dialog-centered modal-notify modal-info  modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">قوانین و مقررات</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <div [innerHTML]="ghavaninVaMoghararat"></div>
+      </div>
+
+
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal قوانینی و مقررات-->
+<!-- The Modal مراحل گردش کار -->
+<div class="modal fad" id="modal_gardeshkar">
+  <div class="modal-dialog  modal-dialog-centered modal-notify modal-info modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">مراحل گردش کار</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+
+        <ul style=" direction:rtl;list-style:decimal;text-align: justify;text-justify: inter-word">
+          <li>ارسال درخواست متقاضی از طریق سامانه ساجات</li>
+          <li>بررسی و پایش پرونده ها توسط انجمن صنفی پیمانکاران</li>
+          <li>بررسی و تایید توسط کارشناسان گروه مشاوران و پیمانکاران سازمان</li>
+          <li>تایید توسط معاون فنی سازمان</li>
+          <li>تایید توسط رئیس سازمان</li>
+          <li>بررسی و تایید توسط نظام فنی و اجرایی سازمان برنامه و بودجه کشور</li>
+          <li>چاپ گواهینامه صلاحیت توسط انجمن صنفی پیمانکاران</li>
+          <li>امضای گواهینامه توسط گروه پیمانکاران و مشاوران، معاون فنی سازمان و رئیس سازمان</li>
+          <li>نصب هولوگرام و انجام پرس گواهینامه توسط انجمن صنفی پیمانکاران</li>
+          <li>تحویل به مدیر عامل شرکت(متقاضی) توسط گروه مشاوران و پیمانکاران سازمان</li>
+
+        </ul>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal مراحل گردش کار-->
+<!-- The Modal ارائه دهنده خدمت و شماره تماس -->
+<div class="modal fad" id="modal_tamas">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title ">ارائه دهنده خدمت و شماره تماس</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <p style="color: red;"> <i class=" far fa-users fa-2x "></i> سرپرست:{{processMasool}}</p>
+        <p style="color: red;"><i class="far fa-user fa-2x"></i> نام و نام خانوادگی مسئول:{{processMasoolNameFamily}}
+        </p>
+        <p style="color: red;"><i class="fas fa-phone-square fa-2x"></i> شماره تماس:{{processPhone}}</p>
+        <p style="color: red;"> <i class="far fa-envelope fa-2x"></i> آدرس ایمیل: {{processEmail}}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal ارائه دهنده خدمت و شماره تماس-->
+<!-- The Modal هزینه انجام خدمت -->
+<div class="modal fad" id="modal_hazineh">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">هزینه انجام خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <div [innerHTML]="hazineAnjamKhedmat"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal هزینه انجام خدمت-->
+<!-- The Modal زمان انجام خدمت -->
+<div class="modal fad" id="modal_zaman">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">زمان انجام خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <div [innerHTML]="zamanAnjamKhedmat"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal زمان انجام خدمت-->
+<!-- The Modal tozihat -->
+<div class="modal fad" id="modal_tozihat">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">شرح مختصر خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <div [innerHTML]="processShortDesc"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal tozihat-->
+<!-- The Modal madarek va formha -->
+<div class="modal fad" id="modal_formha">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">مدارک و فرمهای مورد نیاز</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div [innerHTML]="madarekMoredNiazKhedmat"></div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal madarek va formha-->
+
+<!-- The Modal time -->
+<div class="modal fad" id="modal_time">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">روش ارائه خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div [innerHTML]="nahveEraeKhedmat"></div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal time-->
+
+<!-- The Modal address -->
+<div class="modal fad" id="modal_address">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title">آدرس ارائه خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div [innerHTML]="addressMahalErae"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal addres-->
+
+<!-- The Modal بیانیه سطح توقعات -->
+<div class="modal fad" id="modal_bayanieh">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-notify modal-info modal-dialog-scrollable"
+       role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+        <h4 class="modal-title" style="margin-left: 300px!important;">بیانیه سطح توافق خدمت</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div [innerHTML]="bayanieSathTavafogh"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal addres-->

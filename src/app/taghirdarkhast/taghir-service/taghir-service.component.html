@@ -1,0 +1,237 @@
+<br>
+<br>
+<div class="row" *ngIf="!NAP_SUCCEED">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+
+    <div class="panel-group" [hidden]="flage" >
+      <div class="panel panel-primary">
+        <div class="panel-heading"> لطفا کد رهگیری را وارد کرده سپس دکمه ویرایش را انتخاب کنید</div>
+        <div class="panel-body">
+          <form (ngSubmit)="onSubmit();">
+
+            <div id="user-data">
+              <div class="form-group">
+                <input
+                        type="text"
+                        placeholder="کد رهگیری را وارد نمائید"
+                        id="code_rahgiri"
+                        class="form-control"
+                        [(ngModel)]="code_rahgiri"
+                        name="code_rahgiri">
+              </div>
+            </div>
+            <button class="btn btn-success" type="submit"> ویرایش</button>
+            <div *ngIf="existCodeRaghiri">
+              <h3 class="text-danger">کد رهگیری وارد شده معتبر نمی باشد</h3>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- The Modal  -->
+<div class="modal fad" id="modal_dialog">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-info" role="document">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+
+        <h4 class="modal-title"></h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+        <h3 style="color: red;font-size: 14px"> از صحت اطلاعات درخواستی مطمئن هستید؟</h3>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal"  (click)="OnSubmit2();">بله</button>
+
+        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">خیر</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end modal ارائه دهنده خدمت و شماره تماس-->
+<div *ngIf="NAP_SUCCEED">
+
+
+  <p class="alert  text-center success-color">ویرایش درخواست به میز مشاوره خدمت</p>
+  <form [formGroup]="formGroup">
+
+    <mat-vertical-stepper labelPosition="bottom" linear #stepper formArrayName="formArray" dir="rtl" class="cloudy-knoxville-gradient border border-warning">
+      <mat-step formGroupName="0" [stepControl]="formArray?.get([0])" [editable]="isEditable">
+
+        <ng-template matStepLabel>ورود مشخصات </ng-template>
+        <br>
+        <br>
+        <p id="headerstep1">لطفا مشخصات خود را بصورت دقیق وارد کنید</p>
+        <div class="row">
+          <div class="col">
+            <mat-form-field  appearance="outline" style="width: 70%">
+              <mat-label style="color:#0d47a1;"
+              >نوع خدمت</mat-label>
+              <mat-select formControlName="processUUIDOnvan" [(ngModel)]="processUUIDOnvan">
+                <mat-option *ngFor="let i of onvan;let i = index" [value]="i" (click)="findIndex()" >{{i}} </mat-option>
+
+              </mat-select>
+
+              <mat-error>نوع خدمت را وارد کنید</mat-error>
+            </mat-form-field>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label style="color:#0d47a1;">کدملی</mat-label>
+              <input matInput formControlName="codeMeli"
+                     [(ngModel)]="user.codeMeli"
+                     type="number"  class="text-right">
+              <mat-error>کد ملی را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label style="color:#0d47a1;">نام </mat-label>
+              <input matInput formControlName="firstName"
+                     [(ngModel)]="user.firstName"
+                     required>
+              <mat-error>نام  را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col" appearance="outline">
+            <mat-form-field appearance="outline">
+              <mat-label style="color:#0d47a1;">نام خانوادگی</mat-label>
+              <input matInput formControlName="lastName"
+                     [(ngModel)]="user.lastName"
+                     required class="text-left">
+              <mat-error>نام خانوادگی را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label style="color:#0d47a1;">تلفن همراه </mat-label>
+              <input matInput formControlName="mobile"
+                     [(ngModel)]="user.mobile"
+                     type="number" required>
+              <mat-error>تلفن همراه  را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label style="color:#0d47a1;">تلفن ثابت</mat-label>
+              <input matInput formControlName="phone"
+                     [(ngModel)]="user.tel"
+                     type="number" required class="text-left">
+              <mat-error>تلفن ثابت را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label style="color:#0d47a1;">آدرس </mat-label>
+              <input matInput formControlName="address"
+                     [(ngModel)]="user.address"
+                     required>
+              <mat-error>آدرس  را وارد نمائید</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div>
+          <mat-label style="color:#0d47a1;">شرح درخواست </mat-label>
+          <textarea   id="tozihat" matInput formControlName="tozihat"
+                      [(ngModel)]="user.tozihat"
+                      required></textarea>
+          <button matStepperNext class="btn btn-primary btn-rounded float-left" (click)="Clear()">بعدی </button>
+        </div>
+
+      </mat-step>
+      <mat-step formGroupName="1" [stepControl]="formArray?.get([1])" [editable]="isEditable">
+
+        <ng-template matStepLabel>پیش نمایش اطلاعات</ng-template>
+        <br>
+        <br>
+        <form>
+          <div class="form-group row">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-lg">نوع درخواست:</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control form-control-lg" id="colFormLabelSm" disabled placeholder="{{processUUIDOnvan}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">کدملی:</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="colFormLabel" disabled placeholder="{{user.codeMeli}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgname" class="col-sm-2 col-form-label col-form-label-lg">نام:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control form-control-lg" id="colFormLabelLgname" disabled placeholder="{{user.firstName}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgfname" class="col-sm-2 col-form-label col-form-label-lg">نام خانوادگی:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control form-control-lg" id="colFormLabelLgfname" disabled placeholder="{{user.lastName}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgmobile" class="col-sm-2 col-form-label col-form-label-lg">تلفن همراه:</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control form-control-lg" id="colFormLabelLgmobile" disabled placeholder="{{user.mobile}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgtel" class="col-sm-2 col-form-label col-form-label-lg">تلفن ثابت:</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control form-control-lg" id="colFormLabelLgtel" disabled placeholder="{{user.tel}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgaddress" class="col-sm-2 col-form-label col-form-label-lg">آدرس:</label>
+            <div class="col-sm-8">
+              <textarea class="form-control form-control-lg" id="colFormLabelLgaddress" disabled placeholder="{{user.address}}" style="width: 100%"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="colFormLabelLgtozihat" class="col-sm-2 col-form-label col-form-label-lg">شرح درخواست:</label>
+            <div class="col-sm-8 col-md-8">
+              <textarea  class="form-control form-control-lg" id="colFormLabelLgtozihat" disabled placeholder="{{user.tozihat}}" style="width: 100%;height: 100px"></textarea>
+            </div>
+          </div>
+        </form>
+
+
+        <div>
+          <button  matStepperNext class="btn btn-primary btn-rounded float-left"  data-toggle="modal" data-target="#modal_dialog">ثبت نهایی</button>
+          <button  matStepperPrevious class="btn btn-primary btn-rounded float-left">برگشت</button>
+        </div>
+
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>دریافت کدرهگیری</ng-template>
+
+
+        <br>
+        <div *ngIf="result" >
+          <h4 class="text-success">{{resultOnvan}}</h4>
+          <h3 class="text-center text-danger">{{" کد رهگیری شما :"+codeRahgiri}}
+          </h3>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </form>
+
+</div>

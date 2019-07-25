@@ -1,0 +1,128 @@
+
+ <router-outlet></router-outlet>
+
+<div class="row mt-5">
+  <div class="col-md-12 mb-5">
+
+    <img src="./assets/img/pic-dolati/g2c%20(2).png" alt="">
+
+    <div class=" text-center">
+
+                <span class="card-text card-title " >خدمات قابل ارائه به
+                  شهروندان(مردم)/کسب و کار(بخش خصوصی)
+                  </span>
+      <span class="card-text card-title g2-englishtitle ">G2B / G2C</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mb-3">
+  <div class="col-md-4 my-3">
+    <!-- Card -->
+    <div class="card h-100 m-3" [routerLink]="['/details',3]" routerLinkActive="active">
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top justify-content-center" src="./assets/img/pic-dolati/selahit2.png"  style="height: 170px;width: 200px"><a>
+
+        <div class="mask  rgba-black-slight"></div>
+      </a>
+      </div>
+
+
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <h4 class="card-title">{{onvan[0]}}</h4>
+      </div>
+
+      <div class="card-footer text-primary  grey lighten-2">
+        شناسه خدمت:{{processCode[0]}}
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+
+
+  <div class="col-md-4 my-3">
+    <!-- Card -->
+    <div class="card h-100 m-3" [routerLink]="['/details',5]" routerLinkActive="active">
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top justify-content-center" src="./assets/img/pic-dolati/etebarsanji2.png"  style="height: 170px;width: 200px"><a>
+
+        <div class="mask  rgba-black-slight"></div>
+      </a>
+      </div>
+
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <h4 class="card-title">{{onvan[1]}}</h4>
+      </div>
+
+      <div class="card-footer text-primary  grey lighten-2">
+        شناسه خدمت:{{processCode[1]}}
+      </div>
+
+    </div>
+    <!-- Card -->
+  </div>
+
+
+
+  <div class="col-md-4 my-3">
+    <!-- Card -->
+    <div class="card h-100 m-3" [routerLink]="['/details',18]" routerLinkActive="active">
+      <!-- Card image -->
+      <div class="view overlay">
+        <img class="card-img-top justify-content-center" src="./assets/img/pic-dolati/ehraz2.png"  style="height: 170px;width: 200px"><a>
+
+        <div class="mask  rgba-black-slight"></div>
+      </a>
+      </div>
+      <!--<a class="btn-floating btn-action ml-auto mr-4 mdb-color info-color-dark"><i class="fas fa-chevron-left pl-1"></i></a>-->
+
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <h4 class="card-title">{{onvan[2]}}</h4>
+      </div>
+
+      <div class="card-footer text-primary  grey lighten-2">
+        شناسه خدمت:{{processCode[2]}}
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+</div>
+
+
+<!--<div class="row mb-3">-->
+<!--<div class="col-md-4 my-3" *ngFor="let i of onvan">-->
+<!--&lt;!&ndash; Card &ndash;&gt;-->
+<!--<div class="card h-100 m-3" [routerLink]="['/master',i]" routerLinkActive="active">-->
+<!--&lt;!&ndash; Card image &ndash;&gt;-->
+<!--<div class="view overlay">-->
+<!--<img class="card-img-top justify-content-center" src="./assets/img/pic-dolati/hesab2.png"  style="height: 170px;width: 200px"><a>-->
+
+<!--<div class="mask  rgba-black-slight"></div>-->
+<!--</a>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; Card content &ndash;&gt;-->
+<!--<div class="card-body">-->
+<!--&lt;!&ndash; Title &ndash;&gt;-->
+<!--<h4 class="card-title">{{i}}</h4>-->
+<!--</div>-->
+
+<!--<div class="card-footer text-primary  grey lighten-2">-->
+<!--شناسه خدمت:{{processCode[i]}}-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; Card &ndash;&gt;-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->

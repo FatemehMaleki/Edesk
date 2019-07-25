@@ -1,0 +1,107 @@
+<br>
+<br>
+<div class="row" *ngIf="!NAP_SUCCEED">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> لطفا کد رهگیری را به صورت دقیق وارد نمائید </div>
+        <div class="panel-body">
+          <form (ngSubmit)="onSubmit()">
+
+            <div id="user-data">
+              <div class="form-group">
+                <input
+                        type="text"
+
+                        class="form-control"
+                        [(ngModel)]="codeRahgiri"
+                        name="codeRahgiri" required>
+
+              </div>
+
+            </div>
+            <button class="btn btn-success" type="submit" >مشاهده نتیجه</button>
+            <h3 *ngIf="empetyCodeRahgiri"> کد رهگیری را وارد نمائید</h3>
+            <h3 *ngIf="NAP_ERROR">کد رهگیری معتبر نمی باشد</h3>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="NAP_SUCCEED">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="classic-tabs ">
+
+      <ul class="nav warning-color-dark border border-dark" id="myClassicTabOrange" role="tablist">
+        <li class="nav-item ml-5 animated bounceInRight delay-05s ">
+          <a class="nav-link  waves-light active show" id="profile-tab-classic-orange" data-toggle="tab" href="#profile-classic-orange"
+             role="tab" aria-controls="profile-classic-orange" aria-selected="true"><img > <br><span>لیست پیام های دریافتی</span></a>
+        </li>
+        <li class="nav-item ml-5 animated bounceInRight delay-05s ">
+          <a class="nav-link waves-light" id="follow-tab-classic-orange" data-toggle="tab" href="#follow-classic-orange"
+             role="tab" aria-controls="follow-classic-orange" aria-selected="false"><img src="" ><br>لیست ارجاعات درخواست</a>
+        </li>
+      </ul>
+
+      <div class="tab-content card" id="myClassicTabContentOrange">
+        <div class="tab-pane fade active show" id="profile-classic-orange" role="tabpanel" aria-labelledby="profile-tab-classic-orange">
+          <div class="row row-tabs animated bounceInRight delay-05s" >
+            <table class="table table-bordered table-striped" >
+              <thead class="primary-color-dark">
+              <tr>
+                <th scope="col">ارسال کننده</th>
+                <th scope="col">تاریخ</th>
+                <th scope="col">متن  </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr  *ngFor="let el of allResult">
+                <td scope="row">{{el.ersalKonande}}</td>
+                <td scope="row">{{el.message}}</td>
+                <td scope="row">{{el.tarykh}}</td>
+
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+        <div class="tab-pane fade mr-3 ml-4" id="follow-classic-orange" role="tabpanel" aria-labelledby="follow-tab-classic-orange" style="margin-right: -10px">
+          <div class="row row-tabs  animated bounceInLeft delay-05s" >
+            <table class="table table-bordered table-striped" >
+              <thead class="primary-color-dark">
+              <tr>
+                <th scope="col">ارسال کننده</th>
+                <th scope="col">دریافت کننده</th>
+                <th scope="col">تاریخ ارسال </th>
+                <th scope="col">تاریخ مشاهده</th>
+                <th scope="col"> توضیحات</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr  *ngFor="let el of allRef">
+                <td scope="row">{{el.sender}}</td>
+                <td scope="row">{{el.reciver}}</td>
+                <td scope="row">{{el.tarykhErsal}}</td>
+                <td scope="row">{{el.tarykhView}}</td>
+                <td scope="row">{{el.tozihat}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--<div class="col-md-1"></div>-->
+</div>

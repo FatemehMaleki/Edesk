@@ -1,0 +1,160 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-simple-snackbar.ng-star-inserted,.mat-button-wrapper{
+    font-family: IRANSansWeb_Bold;
+}
+/*item oer page*/
+::ng-deep.mat-button-wrapper{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-option-text {
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-paginator-range-label{
+    font-family: IRANSansWeb_Bold;
+
+}
+::ng-deep.mat-select-value{
+    font-family: IRANSansWeb_Bold;
+
+}
+/*item per page end*/
+table {
+    width: 100%;
+}
+
+table{
+    font-family: Iransans-Light;
+    font-size: 21px!important;
+
+
+}
+table.table thead th{
+    font-family: Iransans-Light;
+    font-size: 16px!important;
+    background: #2e6da4;
+    color: white;
+}
+table.table td{
+    font-family: Iransans-Light;
+    font-size: 12px!important;
+    color: blue;
+
+}
+hr {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+}
+.btn.btn-primary{
+    font-family: Iransans-Light;
+    font-size: 15px;
+
+}
+::ng-deep.mat-radio-button{
+    /*margin-left: 15px;*/
+}
+tr::ng-deep.mat-header-row{
+    font-family: yekan!important;
+}
+::ng-deep.mat-paginator-page-size-label{
+    content: 'سطح'!important;
+}
+tr.mat-header-row{
+    background: #0d47a1;
+
+}
+th.mat-header-cell {
+    color: white!important;
+    text-align: center;
+}
+td.mat-cell{
+    border-color: black;
+    border-style: solid;
+    border-width: thin
+}
+.text-danger{
+    font-family:IRANSansWeb_Bold;
+    font-size: 17px;
+    color: white!important;
+}
+.text-success{
+    font-family:IRANSansWeb_Bold;
+    font-size: 17px;
+    color: white!important;
+}
+td small{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+    color: black!important;
+}
+small{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+    color: black!important;
+}
+table td{
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+}
+input{
+    font-size: 14px!important;
+    border-color: #29b6f6;
+    border-width: thin;
+    border-style: solid;
+}
+/*[type=radio]:checked, [type=radio]:not(:checked) {*/
+
+/*opacity: 1;*/
+/*}*/
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    /*line-height: 3;*/
+}
+
+input:-moz-placeholder {
+    font-size: 12px;
+}
+::ng-deep.mat-radio-group.form-control {
+    border: none!important;
+}
+textarea#tozihat{
+    color:#0d47a1;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    height: 100px;
+    width: 100%;
+    background: white;
+}
+select{
+    font-size: 15px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #29b6f6;
+}
+.was-validated{
+    float: left;
+}
+.was-validated .form-control:invalid {
+
+    background-position:left!important;
+
+}
+.was-validated .form-control:valid {
+
+    background-position:left!important;
+
+}
+@media (max-width: 768px) {
+    ::ng-deep.mat-radio-button{
+        float: right!important;
+    }
+}
+.invalid-feedback{
+    font-size: 12px;
+}

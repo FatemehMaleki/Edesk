@@ -1,0 +1,21 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+.btn-success{
+    font-size: 16px;
+}
+input{
+    font-size: 16px;
+}
+tr th{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+}
+thead tr th{
+    color: white;
+}
+tbody tr td{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+
+}

@@ -1,0 +1,129 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+a{
+    font-family: IRANSansWeb_Bold!important;
+    font-size: 14px!important;
+}
+
+a.dropdown-item{
+    font-size: 12px!important;
+}
+.mr-sm-2{
+    font-size: 14px!important;
+}
+.img-logo{
+    height: 100px;
+    width: 200px;
+    /*margin-right: 100px;*/
+}
+
+.navbar-dark{
+    font-family: IRANSansWeb_Bold;
+    font-size: 15px;
+    color: white;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.bg-dark {
+    margin-top: -5px;
+    background-color: #2196F3 !important;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: white !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #060705;
+}
+.navbar-dark .navbar-toggler {
+    border-color: #ffc107;
+}
+.text-center{
+    font-family: IRANSansWeb_Bold;
+    font-size: 30px;
+
+}
+@media (max-width: 768px) {
+    .text-center{
+        font-family: IRANSansWeb_Bold;
+        font-size: 20px;
+
+    }
+
+}
+.timer{
+    font-family:Iransans-Bold ;
+}
+::ng-deep.mat-radio-label-content{
+    font-family: IRANSansWeb_Bold;
+    font-size: 13px!important;
+}
+.btn{
+    font-family: IRANSansWeb_Bold!important;
+    font-size: 14px!important;
+}
+::ng-deep.mat-simple-snackbar.ng-star-inserted,.mat-button-wrapper{
+    font-family: IRANSansWeb_Bold;
+}
+.carousel-indicators li {
+    width: 15px!important;
+    height: 15px!important;
+    background-color: #f0fffa;
+    border-style: solid;
+    border-width: thin;
+    border-style: solid;
+    border-color: #85f111;
+
+}
+.carousel-indicators li.active{
+    background-color: #dd2c00;
+
+}
+.fa-arrow-circle-right,.fa-arrow-circle-left{
+    font-family: "Font Awesome 5 Pro"!important;
+    background-color: #a893e1;
+    border-radius: 10px;
+}
+.fa-arrow-circle-left:hover{
+    background-color: #29b6f6;
+    border-radius: 30px;
+}
+.fa-arrow-circle-right:hover{
+    background-color: #29b6f6;
+    border-radius: 30px;
+}
+.carousel-indicators li:hover{
+    background-color: #FF8800;
+
+}
+.carousel-control.left, .carousel-control.right {
+    background-image:none !important;
+
+    /*filter:none !important;*/
+}
+.carousel-control.next{
+    margin-bottom: -80px!important;
+    padding-bottom: -50px;
+}
+.ras-top{
+    /*margin-top: 50px;*/
+}
+.carousel-caption{
+    font-family: IRANSansWeb_Bold;
+    font-size: 28px;
+    /*color: white;*/
+}
+@media (max-width: 768px) {
+    .carousel-caption{
+        font-family: IRANSansWeb_Bold;
+        font-size: 20px;
+    }
+    /*.ras-top{*/
+    /*margin-top: 40px;*/
+    /*}*/
+}
+

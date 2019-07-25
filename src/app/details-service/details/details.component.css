@@ -1,0 +1,77 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+@media (max-width: 768px) {
+    .row.row-tabs{
+        margin-right: 30px!important;
+        margin-left: 30px!important;
+    }
+    .classic-tabs .nav.tabs-cyan li a {
+        border-color: #e53935;
+        margin-right: 30px!important;
+    }
+}
+.classic-tabs .nav.tabs-cyan li a {
+    border-color: #e53935;
+    margin-right: 70px;
+}
+
+.modal-content{
+    margin-right: 30px;
+    margin-left: 30px;
+    text-align: right;
+    font-family: IRANSansWeb;
+    font-size: 15px!important;
+}
+
+.modal-header .close{
+    margin: -15px -15px 0px 15px!important;
+}
+.modal-title {
+    margin-left: 150px;
+}
+.far,.fas,.fab{
+    font-family:"Font Awesome 5 Pro" !important;
+}
+@media (max-width: 768px) {
+    .modal-title {
+        margin-left: 70px!important;
+    }
+}
+.classic-tabs .nav.tabs-cyan li a.active {
+    background:#0d47a1;
+}
+/*loading*/
+.spinner{
+    border: 16px solid silver;
+    border-top: 16px solid #e23745;
+    border-radius: 50%;
+    width: 80px;
+
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 10%;
+    left: 45%;
+    position: absolute;
+    z-index: 99999;
+}
+@keyframes spin {
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+
+}
+@media (max-width: 768px) {
+    .spinner{
+        border: 16px solid #212121;
+        border-top: 16px solid #e23745;
+        border-radius: 50%;
+        width: 80px;
+
+        height: 80px;
+        animation: spin 700ms linear infinite;
+        top: 1%;
+        left: 45%;
+        position: absolute;
+        z-index: 99999;
+    }
+}

@@ -1,0 +1,224 @@
+*{
+    font-family: IRANSansWeb_Bold!important;
+}
+::ng-deep.mat-step-icon-content{
+    font-family: Iransans-Bold!important;
+}
+::ng-deep.mat-horizontal-stepper-header-container {
+    font-family: IRANSansWeb_Bold!important;
+    /*border-radius: 25px;*/
+    /*border-style: solid;*/
+    border-width: thin!important;
+
+}
+::ng-deep.mat-stepper-horizontal{
+    font-family: IRANSansWeb_Bold!important;
+    border-radius: 25px!important;
+
+}
+::ng-deep.mat-step-header .mat-step-icon-selected{
+    background: #f4511e !important;
+
+    /*height: 50px;*/
+    /*width: 50px;*/
+}
+::ng-deep.mat-step-header .mat-step-icon
+{
+    height: 50px!important;
+    width: 50px!important;
+    margin-right: -30px!important;
+    border-style: solid!important;
+    border-width: thin!important;
+    border-color: #d39e00!important;
+}
+::ng-deep.mat-step-header .mat-step-icon:hover
+{
+    background:#FF8800;
+}
+
+
+#headerstep1{
+    color: #CC0000;
+    text-align: center;
+    font-size:18px ;
+    margin-top: -30px;
+    margin-bottom: 30px;
+
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{
+    margin-bottom: -10px;
+}
+::ng-deep.ng-star-inserted{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-icon.notranslate.material-icons.mat-icon-no-color.ng-star-inserted{
+    font-family: "Material Icons"!important;
+}
+hr{
+    margin-top: -10px;
+}
+.alert-danger{
+    font-family: IRANSansWeb_Bold;
+    font-size: 15px;
+}
+mat-icon{
+    font-family: "Material Icons"!important;
+
+}
+.btn-primary{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+
+}
+.btn{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+}
+span{
+    font-family: IRANSansWeb_Bold;
+}
+th{
+    font-family: IRANSansWeb_Bold;
+    font-size: 15px;
+}
+.panel {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.alert-danger{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+P{
+    margin-right: -15px!important;
+    margin-left: -15px!important;
+    font-family: IRANSansWeb_Bold;
+    font-size: 21px;
+    color: white;
+}
+.step2-panel-right{
+    font-family: IRANSansWeb_Bold;
+    font-size: 17px;
+    color: black!important;
+}
+.material-icons{
+    font-family: inherit!important;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{
+
+    /*margin-top: 100px;*/
+    /*margin-bottom: -20px;*/
+    /*border-radius: 5px 20px 5px;*/
+    /*!*border-radius: 50%;*!*/
+    /*background: #FF8800;*/
+    /*border-color: #00c853 ;*/
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+    /*padding: 15px;*/
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:hover{
+    /*background: #00b8d4;*/
+    /*border-color: #FF8800 ;*/
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
+    padding: 10px!important;
+}
+::ng-deep.mat-step-icon.mat-step-icon-state-number {
+    /*content: "\e285";*/
+    /*background: red;*/
+    /*margin-top: 60px;*/
+    /*!*display: none;*!*/
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+    /*border-color: #d39e00;*/
+}
+
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label {
+    margin-top: 100px!important;
+    /*margin-bottom: -5px;*/
+    /*color: red;*/
+}
+.step1{
+
+    border-style: solid;
+    border-width: thin;
+    border-color: #d39e00;
+    display: inline-block;
+    border-radius: 50%;
+    width: 200px;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    line-height: 200px;
+    border-radius: 50%; /* the magic */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    /*background-image: url("../../assets/img/shenaseh1.png");*/
+    margin: 0 auto 40px;
+    margin-bottom: -70px;
+}
+::ng-deep.matStepLabel{
+    color: #060705 !important;
+}
+
+::ng-deep.mat-step-header .mat-step-label {
+    color: black!important;
+}
+::ng-deep.mat-step-header .mat-step-label.mat-step-label-active {
+    color: var(--ck-color-base-active);
+}
+::ng-deep.mat-stepper-vertical-line::before{
+    color: #e64a19!important;
+    border-width: medium!important;
+    border-style: solid!important;
+    margin-right: 10px!important;
+    margin-top: 5px!important;
+    margin-bottom: 5px!important;
+    margin-right: -10px!important;
+}
+::ng-deep.mat-vertical-stepper-header .mat-step-icon {
+    margin-right: -20px!important;
+}
+::ng-deep.mat-stepper-vertical{
+    margin-top: -15px!important;
+    margin-right: -15px!important;
+    margin-left: -15px!important;
+
+}
+
+::ng-deep.ck.ck-editor__editable_inline>:first-child {
+    height: 100px!important;
+}
+/*inpute */
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+    margin-top: -5px;
+}
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: var(--ck-color-button-save);
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+}
+
+textarea#tozihat{
+    color:#0d47a1;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    height: 200px
+}

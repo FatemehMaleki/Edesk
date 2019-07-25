@@ -1,0 +1,65 @@
+.card-text{
+    font-family: Iransans-Bold;
+    font-size: 19px!important;
+}
+.card{
+    padding-left: 5px;
+    cursor: pointer;
+}
+p.text-center{
+    font-family: IRANSansWeb_Bold;
+    font-size: 17px;
+}
+.alert{
+    color: blue;
+}
+.border-success{
+    border-style: solid;
+    border-width: thick;
+}
+.card .card-body .card-text {
+    color: var(--ck-color-base-text);
+}
+.testimonial-card .card-up{
+    margin-left: -5px;
+}
+@media (min-width: 576px) {
+    .card-group > .card:not(:last-child) {
+        margin-left: 8px;
+    }
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{
+
+    margin-top: 100px;
+    margin-bottom: -20px;
+    border-radius: 5px 20px 5px;
+    /*border-radius: 50%;*/
+    background: #FF8800;
+    border-color: #00c853 ;
+    border-style: solid;
+    border-width: thin;
+    padding: 15px;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:hover{
+    background: #00b8d4;
+    border-color: #FF8800 ;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
+    padding: 10px!important;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
+
+    display: none;
+}
+.testimonial-card .avatar {
+    border: 5px solid #FF8800;
+}
+.img-hover:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+
+}

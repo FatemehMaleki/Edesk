@@ -1,0 +1,64 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+.card-title{
+    font-family: IRANSansWeb_Bold;
+    /*font-size: 29px;*/
+    line-height: 2;
+
+}
+.card-text{
+    font-size: 20px;
+}
+.view img {
+    margin-right: 30px!important;
+}
+
+
+.nap-card :hover{
+
+
+
+}
+
+.g2-englishtitle{
+    font-family: 'Times New Roman'!important;
+    font-weight: 900;
+}
+/*loading*/
+.spinner{
+    border: 16px solid silver;
+    border-top: 16px solid #e23745;
+    border-radius: 50%;
+    width: 80px;
+
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 10%;
+    left: 45%;
+    position: absolute;
+    z-index: 99999;
+}
+@keyframes spin {
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)}
+
+}
+@media (max-width: 768px) {
+    .spinner{
+        border: 16px solid silver;
+        border-top: 16px solid #e23745;
+        border-radius: 50%;
+        width: 80px;
+
+        height: 80px;
+        animation: spin 700ms linear infinite;
+        top: 1%;
+        left: 45%;
+        position: absolute;
+        z-index: 99999;
+    }
+}
+.fas.fa-search{
+    font-family: "Font Awesome 5 Pro"!important;
+}

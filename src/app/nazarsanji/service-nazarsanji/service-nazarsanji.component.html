@@ -1,0 +1,408 @@
+
+
+<h3 class="text-dark mt-5" >شهروند گرامی خواهشمند است با اعلام میزان رضایت خود از هر یک از محورهای ارائه شده در این پرسشنامه، ما را در ارتقاء سطح رعایت حقوق شهروندی یاری فرمایید.</h3>
+<div class="border border-primary">
+  <!--<form>-->
+  <form [formGroup]="formGroupUser" (ngSubmit)="OnSubmit()">
+    <div class="panel-group ">
+      <div class="panel panel-primary">
+        <div class="panel-body white">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label >جنسیت</label>
+              <select class="browser-default custom-select form-control" formControlName="jensiat" [ngClass]="{ 'is-invalid': submitted && f.jensiat.errors }"
+              >
+                <option value="مرد" >مرد</option>
+                <option value="زن">زن</option>
+
+              </select>
+              <div *ngIf="submitted && f.jensiat.errors" class="invalid-feedback">
+                <div *ngIf="f.jensiat.errors.required">نوع جنسیت را انتخاب کنید</div>
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <label>سن</label>
+              <input type="number"  formControlName="sen" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sen.errors }">
+              <div *ngIf="submitted && f.sen.errors" class="invalid-feedback">
+                <div *ngIf="f.sen.errors.required">سن را وارد نمائید</div>
+              </div>
+
+            </div>
+            <div class="form-group col-md-3">
+              <label>تحصیلات</label>
+              <select class="browser-default custom-select" formControlName="tahsilat"  [ngClass]="{ 'is-invalid': submitted && f.tahsilat.errors }"
+              >
+                <option value="سیکل">سیکل</option>
+                <option value="کاردانی">کاردانی</option>
+                <option value="کارشناسی">کارشناسی</option>
+                <option value="کارشناسی ارشد">کارشناسی ارشد</option>
+                <option value="دکتری"> دکتری</option>
+              </select>
+              <div *ngIf="submitted && f.tahsilat.errors" class="invalid-feedback">
+                <div *ngIf="f.tahsilat.errors.required">تحصیلات را وارد نمائید</div>
+              </div>
+
+              <!--<input type="text" class="form-control" id="inputAddress"  placeholder="تحصیلات خود را وارد کنید" [(ngModel)]="user.tahsilat" name="tahsilat">-->
+            </div>
+            <div class="form-group col-md-3 ">
+              <label >شغل</label>
+              <input type="text" formControlName="shoghl" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.shoghl.errors }">
+              <div *ngIf="submitted && f.shoghl.errors" class="invalid-feedback">
+                <div *ngIf="f.shoghl.errors.required">شغل را وارد نمائید</div>
+
+              </div>
+              <div *ngIf="submitted && f.shoghl.errors" class="invalid-feedback">
+                <div *ngIf="f.shoghl.errors.minlength">hgh را وارد نمائید</div>
+
+              </div>
+            </div>
+          </div>
+          <div class="form-row ">
+            <div class="form-group col-md-3 mt-4  ">
+              <label>تعداد مراجعه به سایت</label>
+              <input type="number" formControlName="refCount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.refCount.errors }">
+              <div *ngIf="submitted && f.refCount.errors" class="invalid-feedback float-right">
+                <div *ngIf="f.refCount.errors.required">تعداد مراجعه به سایت را وارد نمائید</div>
+              </div>
+              <!--<div class="invalid-feedback ">تعداد مراجعه به سایت را وارد نمائید</div>-->
+
+            </div>
+            <div class="form-group col-md-6 mt-4  ">
+              <label >برای دریافت چه خدمتی مراجعه نموده اید؟
+              </label>
+              <select class="browser-default custom-select"  formControlName="processUUID"   [ngClass]="{ 'is-invalid': submitted && f.processUUID.errors }" >
+                <option *ngFor="let i of onvan" [value]="i" >{{i}}</option>
+              </select>
+              <div *ngIf="submitted && f.processUUID.errors" class="invalid-feedback">
+                <div *ngIf="f.processUUID.errors.required">نوع خدمت را اتنخاب نمائید</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row" style="margin-top: -20px">
+      <div class="col-sm-12 col-md-12">
+        <div class=" ">
+          <table class="table table-bordered white border border-primary">
+            <thead class="">
+            <tr>
+              <th  class="text-center "><small style="color: white!important;">ردیف</small></th>
+              <th  class="text-center">محور سنجش</th>
+              <th  class="text-center ">پرسش</th>
+              <th  class="text-center ">سطح رضایت</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row" class="text-center"><small>1</small></th>
+              <td class="text-center"><small>شفافیت فرآیندی</small></td>
+              <td class="text-left"><small>نحوه اطلاع رسانی درباره مراحل انجام کار</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer1.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer1.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer1.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>2</small></th>
+              <td class="text-center"><small>شفافیت فرآیندی</small></td>
+              <td class="text-left"><small>نحوه اطلاع رسانی درباره مدارک مورد نیاز برای ارائه خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer2.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer2.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer2.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>3</small></th>
+              <td class="text-center"><small>شفافیت فرآیندی</small></td>
+              <td class="text-left"><small>انجام کار بر اساس ضوابط اداری و عدم دخالت قضاوت های شخصی</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer3.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer3.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer3.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row" class="text-center"><small>4</small></th>
+              <td class="text-center"><small>پاسخگویی و مسئولیت پذیری</small></td>
+              <td class="text-left"><small>نحوه رفتار و راهنمایی و پاسخگویی مسئول مربوطه</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer4.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer4.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer4.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>5</small></th>
+              <td class="text-left"><small>پاسخگویی و مسئولیت پذیری</small></td>
+              <td class="text-left"><small>امکانات رفاهی و فضای ارائه خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer5" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer5.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer5.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer5.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>6</small></th>
+              <td class="text-center"><small>پاسخگویی و مسئولیت پذیری</small></td>
+              <td class="text-left"><small>به موقع بودن و شفاف بودن رسیدگی به شکایات، نظرات و پیشنهادهای شما</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer6" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer6.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+
+                <div *ngIf="submitted && f.answer6.errors" class="invalid-feedback mt-1">
+                  <div *ngIf="f.answer6.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>7</small></th>
+              <td class="text-center"><small>پاسخگویی و مسئولیت پذیری</small></td>
+              <td class="text-left"><small>راهنمایی و پاسخگویی کارکنان و پیگیری وضعیت درخواست ها</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer7" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer7.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer7.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer7.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row" class="text-center"><small>8</small></th>
+              <td class="text-center" ><small>تسلط بر فرآیند</small></td>
+              <td class="text-left"><small>دقت کارمند در انجام کار به گونه ای که نیاز به دوباره کاری نباشد</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer8" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer8.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer8.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer8.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+
+
+            <tr>
+              <th scope="row" class="text-center"><small>9</small></th>
+              <td class="text-center"><small>زمان فرآیند</small></td>
+              <td class="text-left"><small>تعداد دفعات مراجعه به سازمان برای دریافت خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer9" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer9.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer9.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer9.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>10</small></th>
+              <td class="text-center"><small>زمان فرآیند</small></td>
+              <td class="text-left"><small>تعهد و پایبندی دستگاه به زمان ارائه خدمت در فرم رسید خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer10.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer10.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer10.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>11</small></th>
+              <td class="text-center"><small>زمان فرآیند</small></td>
+              <td class="text-left"><small>میزان مراجعه به قسمت ها و بخش های مختلف برای دریافت خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer11" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer11.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer11.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer11.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row" class="text-center"><small>12</small></th>
+              <td class="text-center"><small>نظام مند بودن فرآیند</small></td>
+              <td class="text-left"><small>نظم، ترتیب و سهولت دسترسی به افراد و امکانات برای دریافت خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer12" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer12.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer12.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer12.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+
+              <th scope="row" class="text-center"><small>13</small></th>
+              <td class="text-center"><small>نظام مند بودن فرآیند</small></td>
+              <td class="text-left"><small>دریافت یکباره مدارک و اطلاعات به صورت الکترونیکی یا حضوری در هنگام مراجعه توسط دستگاه</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer13" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer13.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer13.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer13.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>14</small></th>
+              <td class="text-center"><small>نظام مند بودن فرآیند</small></td>
+              <td class="text-left"><small>ارائه چندباره اطلاعات یا اطلاعات تکراری(نظیر کپی شناسنامه، کارت ملی و ...) به بخش های مختلف</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer14" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer14.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer14.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer14.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-center"><small>15</small></th>
+              <td class="text-center"><small>نظام مند بودن فرآیند</small></td>
+              <td class="text-left"><small>احساس نیاز به سفارش و توصیه های غیرقانونی برای دریافت خدمت</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer15" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer15.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer15.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer15.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row" class="text-center"><small>16</small></th>
+              <td class="text-center"><small>کلیت فرآیند</small></td>
+              <td class="text-left"><small>احساس رضایت از خدمات دریافت شده</small></td>
+              <td class="text-dark text-center col-md-12">
+                <mat-radio-group   formControlName="answer16" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.answer16.errors }">
+                  <mat-radio-button value="خیلی کم">خیلی کم</mat-radio-button>
+                  <mat-radio-button value="کم">کم</mat-radio-button>
+                  <mat-radio-button value="متوسط">متوسط</mat-radio-button>
+                  <mat-radio-button value="زیاد">زیاد</mat-radio-button>
+                  <mat-radio-button value="خیلی زیاد">خیلی زیاد</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="submitted && f.answer16.errors" class="invalid-feedback">
+                  <div *ngIf="f.answer16.errors.required">یکی از گزینه ها را انتخاب نمائید</div>
+                </div>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--</form>-->
+
+    <p class="text-dark text-left">چنانچه علاوه بر موارد فوق مطلب یا پیشنهادی درخصوص نحوه انجام خدمت و اصلاح روشهای انجام کار در زمینه مورد نظر خود دارید مرقوم فرمایید:</p>
+    <textarea id="tozihat" matInput  class="text-left"
+
+              required></textarea>
+    <div class="alert alert-success fade show" *ngIf="SendSuccess" style="margin-bottom: -10px">
+      <strong>کاربر محترم نظر شما با موفقیت ثبت شد.</strong>
+    </div>
+    <button class="btn btn-primary" type="submit" dir="rtl">ذخیره اطلاعات نظر سنجی</button>
+  </form>
+</div>
+

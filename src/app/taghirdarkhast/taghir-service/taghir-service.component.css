@@ -1,0 +1,182 @@
+*{
+    font-family:IRANSansWeb_Bold;
+}
+.btn-success{
+    font-size: 16px;
+}
+input{
+    font-size: 16px;
+}
+*{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-step-icon-content{
+    font-family: Iransans-Bold!important;
+}
+::ng-deep.mat-horizontal-stepper-header-container {
+    font-family: IRANSansWeb_Bold;
+    /*background:#006064 ;*/
+    /*background: url("../../../assets/img/miz.jpg");*/
+    /*border-radius: 25px;*/
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+
+}
+::ng-deep.mat-stepper-horizontal{
+    font-family: IRANSansWeb_Bold;
+    border-radius: 25px;
+
+}
+::ng-deep.mat-step-header .mat-step-icon-selected{
+    background: #f4511e ;
+    height: 50px;
+    width: 50px;
+}
+::ng-deep.mat-step-header .mat-step-label{
+    color: white;
+}
+::ng-deep.mat-step-header .mat-step-label.mat-step-label-active {
+    color: white;
+}
+#headerstep1{
+    color: #CC0000;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+
+}
+.alert-danger{
+    font-family: IRANSansWeb_Bold;
+    font-size: 16px;
+}
+/*::ng-deep.ng-star-inserted{*/
+/*font-family: Iransans-Bold;*/
+
+/*}*/
+.material-icons{
+    font-family: "Material Icons"!important;
+
+}
+.btn-primary{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+
+}
+.fa{
+    font-family: "Material Icons"!important;
+}
+.panel {
+    font-family: IRANSansWeb_Bold;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.alert-danger{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+P{
+    font-family: IRANSansWeb_Bold;
+    font-size: 21px;
+    color: white;
+    margin-right: -15px!important;
+    margin-left: -15px!important;
+}
+.step2-panel-right{
+    font-family: IRANSansWeb_Bold;
+    font-size: 17px;
+    color: black!important;
+}
+.btn{
+    font-family: IRANSansWeb_Bold;
+    font-size: 14px;
+}
+span{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{
+
+    margin-top: 100px;
+    margin-bottom: -20px;
+    border-radius: 5px 20px 5px;
+    /*border-radius: 50%;*/
+    background: #FF8800;
+    border-color: #00c853 ;
+    border-style: solid;
+    border-width: thin;
+    padding: 15px;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:hover{
+    background: #00b8d4;
+    border-color: #FF8800 ;
+}
+::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
+    padding: 10px!important;
+}
+::ng-deep.matStepLabel{
+    color: #060705 !important;
+}
+::ng-deep.mat-stepper-vertical{
+    margin-top: -15px!important;
+    margin-right: -15px!important;
+    margin-left: -15px!important;
+
+}
+::ng-deep.ng-star-inserted{
+    font-family: IRANSansWeb_Bold;
+}
+::ng-deep.mat-icon.notranslate.material-icons.mat-icon-no-color.ng-star-inserted{
+    font-family: "Material Icons"!important;
+}
+::ng-deep.mat-step-header .mat-step-label {
+    color: black!important;
+}
+::ng-deep.mat-step-header .mat-step-label.mat-step-label-active {
+    color: var(--ck-color-base-active);
+}
+::ng-deep.mat-stepper-vertical-line::before{
+    color: #e64a19!important;
+    border-width: medium!important;
+    border-style: solid!important;
+    margin-right: 10px!important;
+    margin-top: 5px!important;
+    margin-bottom: 5px!important;
+    margin-right: -10px!important;
+}
+::ng-deep.mat-vertical-stepper-header .mat-step-icon {
+    margin-right: -20px!important;
+}
+::ng-deep.mat-step-header .mat-step-icon
+{
+    height: 50px!important;
+    width: 50px!important;
+    margin-right: -20px!important;
+    border-style: solid!important;
+    border-width: thin!important;
+    border-color: #d39e00!important;
+}
+::ng-deep.mat-step-header .mat-step-icon:hover
+{
+    background:#FF8800;
+}
+::ng-deep.ck.ck-editor__editable_inline>:first-child {
+    height: 100px!important;
+}
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+    margin-top: -10px;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+}
+textarea#tozihat{
+    color:#0d47a1;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    height: 200px
+}
