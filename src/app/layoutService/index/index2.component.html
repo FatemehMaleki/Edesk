@@ -1,0 +1,300 @@
+<div class="container ras-border">
+<!--منوی بالایی-->
+
+    <form [formGroup]="quetionForm">
+        <!-- The Modal نظرسنجی -->
+        <div class="modal fad" id="nazarsanji">
+            <div class="modal-dialog  modal-dialog-centered modal-notify modal-info" role="document">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header white-text">
+                        <div class="row">
+                            <div class="">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="white-text fa-1x" >&times;</span>
+                                </button>
+                            </div>
+                            <h4 class="modal-title float-left">ثبت نظرسنجی میزخدمت</h4>
+
+                        </div>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+                        <h3 class="">{{question_onvan}} ؟</h3>
+                        <mat-radio-group aria-label="Select an option" name="indexChecked" [(ngModel)]="indexChecked" formControlName="response" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.response.errors }">
+                            <mat-radio-button value="1">{{stringResponse1}}</mat-radio-button>
+                            <br>
+
+                            <mat-radio-button value="2">{{stringResponse2}} </mat-radio-button>
+                            <br>
+                            <mat-radio-button value="3">{{stringResponse3}}</mat-radio-button>
+                            <br>
+                            <mat-radio-button value="4">{{stringResponse4}}</mat-radio-button>
+                            <br>
+                            <mat-radio-button value="5">{{stringResponse5}}</mat-radio-button>
+                        </mat-radio-group>
+                        <br> <div *ngIf="submitted && f.response.errors" class="invalid-feedback">
+                        <div *ngIf="f.response.errors.required">یکی از گزینه ها را انتخاب کنید</div>
+                    </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="OnSubmit()">
+                            ثبت نظر سنجی</button>
+
+                        <button *ngIf="SendSuccess"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#result" data-dismiss="modal" (click)="findPollingOfQuestion()">مشاهده نتایج</button>
+                        <div class="alert alert-success fade show" *ngIf="SendSuccess" style="margin-bottom: -10px">
+                            <strong>کاربر محترم نظر شما با موفقیت ثبت شد.</strong>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+
+                        <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--end modal نظرسنجی-->
+    <!-- The Modal مشاهده نتایج -->
+    <div class="modal fad" id="result">
+        <div class="modal-dialog  modal-dialog-centered modal-notify modal-info" role="document">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header white-text">
+                    <div class="row">
+                        <div class="">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="white-text fa-1x" >&times;</span>
+                            </button>
+                        </div>
+                        <h4 class="modal-title">نتایج نظرسنجی</h4>
+                    </div>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body" style="text-align: justify;text-justify: inter-word">
+                    <!-- Blue -->
+
+                    <h3>{{stringResponse1}}</h3>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar" [style.width]="(countResponse1Value/lenquestion)*100+'%'">{{(countResponse1Value/lenquestion)*100|number}}%</div>
+                    </div>
+
+                    <!-- Green -->
+                    <h3>{{stringResponse2}}</h3>
+
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-success" [style.width]="(countResponse2Value/lenquestion)*100+'%'">{{(countResponse2Value/lenquestion)*100|number}}%</div>
+                    </div>
+
+                    <!-- Turquoise -->
+                    <h3>{{stringResponse3}}</h3>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-info" [style.width]="(countResponse3Value/lenquestion)*100+'%'">{{(countResponse3Value/lenquestion)*100|number}}%</div>
+                    </div>
+
+                    <!-- Orange -->
+                    <h3>{{stringResponse4}}</h3>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-warning" [style.width]="(countResponse4Value/lenquestion)*100+'%'">{{(countResponse4Value/lenquestion)*100|number}}%</div>
+                    </div>
+
+                    <!-- Red -->
+                    <h3>{{stringResponse5}}</h3>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-danger" [style.width]="(countResponse5Value/lenquestion)*100+'%'">{{(countResponse5Value/lenquestion)*100|number}}%</div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-success" style="margin-top: -8px;margin-bottom: -8px" data-dismiss="modal">بستن</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--end modal مشاهده نتایج-->
+
+
+
+
+
+    <nav class="navbar  navbar-expand-lg navbar-dark primary-color rtl ">
+
+        <!-- Navbar brand -->
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="''">صفحه اصلی
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="''">میز خدمت</a>
+                </li>
+                <!--<li class="nav-item">-->
+                <!--<a class="nav-link" [routerLink]="'/mizkhadamat'">مشاوره خدمت</a>-->
+                <!--</li>-->
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">مشاوره خدمت</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" [routerLink]="['/darkhast']">ارسال درخواست</a>
+                        <a class="dropdown-item" [routerLink]="['/taghirdarkhast']" >تغییر درخواست</a>
+                        <a class="dropdown-item" [routerLink]="['/moshahede']">مشاهده نتیجه</a>
+                        <a class="dropdown-item" [routerLink]="['/nazarsanji']">نظرسنجی</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#nazarsanji" (click)="clear()"> مشارکت الکترونیک</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['/shekait']">شکایات/انتقادات</a>
+                </li>
+
+
+            </ul>
+            <!-- Links -->
+            <!-- Search form -->
+
+
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+<!--پایان منوی بالایی-->
+   <div class="row">
+     <div class="col-md-12">
+
+       <router-outlet></router-outlet>
+
+     </div>
+
+
+   </div>
+     <br>
+
+     <!-- Footer -->
+     <footer class="page-footer font-small primary-color-dark pt-4">
+
+         <!-- Footer Links -->
+         <div class="container-fluid text-center text-md-left">
+
+             <!-- Grid row -->
+             <div class="row">
+
+                 <!-- Grid column -->
+                 <div class="col-md-6 mt-md-0 mt-3">
+
+                     <!-- Content -->
+                     <h5 class="text-uppercase">میز خدمات الکترونیکی استان لرستان</h5>
+                        <hr>
+                     <ul class="list-unstyled ">
+                         <li>
+                             <a [routerLink]="'/g2c'">خدمات قابل ارائه به
+                                 شهروندان(مردم)/کسب و کار(بخش خصوصی)
+                                 G2B / G2C</a>
+                         </li>
+                         <li>
+                             <a [routerLink]="'/g2g'">خدمات قابل ارائه به
+                                 دستگاههای اجرایی
+                                 G2G</a>
+                         </li>
+                         <li >
+                             <a [routerLink]="'/moshavere'">مشاوره خدمت</a>
+                         </li>
+                         <li>
+                             <a [routerLink]="'/nazarsanji'">نظرسنجی خدمات</a>
+                         </li>
+                         <li>
+                             <a [routerLink]="'/shekait'">شکایات و انتقادات  </a>
+                         </li>
+                     </ul>
+                 </div>
+                 <!-- Grid column -->
+
+                 <hr>
+
+                 <!-- Grid column -->
+                 <div class="col-md-3 mb-md-0 mb-3">
+
+                     <!-- Links -->
+                     <h5 class="text-uppercase">واحدهاي وابسته</h5>
+                     <hr>
+
+                     <ul class="list-unstyled text-left">
+                         <li>
+                             <a href="http://www.mporg.ir/" class="text-right">سازمان برنامه و بودجه کل کشور</a>
+                         </li>
+                         <li>
+                             <a href="https://lorestan.mporg.ir/Portal/View/Page.aspx?PageId=5185b148-8152-4797-8ebb-171052fc3f35&WebpartId=33333333-3333-3333-3333-333333333333&ObjectType=DataItem&ObjectId=ab85e9f3-35fb-4303-99ae-2c86cf9d568f">سازمان و مدیریت برنامه ریزی استان ها</a>
+                         </li>
+                         <li>
+                             <a href="https://www.amar.org.ir/">مرکز آمار ایران</a>
+                         </li>
+                         <li>
+                             <a href="https://www.smtc.ac.ir/">مرکز آموزش و پژوهش های توسعه و آینده نگری</a>
+                         </li>
+                     </ul>
+
+                 </div>
+                 <!-- Grid column -->
+
+                 <!-- Grid column -->
+                 <div class="col-md-3 mb-md-0 mb-3">
+
+                     <!-- Links -->
+                     <h5 class="text-uppercase">وب گاه های مهم</h5>
+ <hr>
+                     <ul class="list-unstyled">
+                         <li>
+                             <a href="http://www.leader.ir/">دفتر مقام معظم رهبری</a>
+                         </li>
+                         <li>
+                             <a href="http://www.president.ir/">ریاست جمهوری اسلامی ایران</a>
+                         </li>
+                         <li>
+                             <a href="http://www.saamad.ir/Portal/Home/">مرکز ارتباطات مردمی ریاست جمهوری</a>
+                         </li>
+                         <li>
+                             <a href="http://ostan-lr.ir/">استانداری لرستان</a>
+                         </li>
+                     </ul>
+
+                 </div>
+                 <!-- Grid column -->
+
+             </div>
+             <!-- Grid row -->
+
+         </div>
+         <!-- Footer Links -->
+
+         <!-- Copyright -->
+         <div class="footer-copyright text-center primary-color white-text">
+         کلیه حقوق این وب گاه متعلق به سازمان مدیریت و برنامه ریزی استان لرستان می باشد
+         </div>
+         <!-- Copyright -->
+
+     </footer>
+     <!-- Footer -->
+     </div>
+   <!--<app-tabs></app-tabs>-->
+
+
+

@@ -1,0 +1,183 @@
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {WebserviceService} from '../../service/webservice.service';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+
+@Component({
+  selector: 'app-index2',
+  templateUrl: './index2.component.html',
+  styleUrls: ['./index2.component.css']
+})
+export class Index2Component implements OnInit {
+
+
+  result;
+  quetionForm:FormGroup;
+  submitted = false;
+  question_onvan;
+// question_answer:'1';
+  stringResponse1:'1';
+  stringResponse2:'0';
+  stringResponse3:'0';
+  stringResponse4:'0';
+  stringResponse5:'0';
+  ResponsQuestion={
+    response1Value:'1',
+    response2Value:'0',
+    response3Value:'0',
+    response4Value:'0',
+    response5Value:'0',
+    questionUUID:'',
+    userAgent:'',
+  }
+  countResponse1Value:number=0;
+  countResponse2Value:number=0;
+  countResponse3Value:number=0;
+  countResponse4Value:number=0;
+  countResponse5Value:number=0;
+  lenquestion:any=0;
+
+  SendSuccess:boolean=false;
+  indexChecked;
+
+  constructor(private service:WebserviceService,private  http:HttpClient,private formBuilder:FormBuilder,private router:Router) {
+    this.fetche_question();
+    this.SendSuccess=false;
+  }
+  Fetche_RadioButton(indexValue:any){
+    var x=indexValue['response'];
+    if(x=="1"){
+      this.ResponsQuestion.response1Value='1';
+      this.ResponsQuestion.response2Value='0';
+      this.ResponsQuestion.response3Value='0';
+      this.ResponsQuestion.response4Value='0';
+      this.ResponsQuestion.response5Value='0';
+    }
+    if(x=="2"){
+      this.ResponsQuestion.response1Value='0';
+      this.ResponsQuestion.response2Value='1';
+      this.ResponsQuestion.response3Value='0';
+      this.ResponsQuestion.response4Value='0';
+      this.ResponsQuestion.response5Value='0';
+    }
+    if(x=="3"){
+      this.ResponsQuestion.response1Value='0';
+      this.ResponsQuestion.response2Value='0';
+      this.ResponsQuestion.response3Value='1';
+      this.ResponsQuestion.response4Value='0';
+      this.ResponsQuestion.response5Value='0';
+    }
+    if(x=="4"){
+      this.ResponsQuestion.response1Value='0';
+      this.ResponsQuestion.response2Value='0';
+      this.ResponsQuestion.response3Value='0';
+      this.ResponsQuestion.response4Value='1';
+      this.ResponsQuestion.response5Value='0';
+    }
+    if(x=="5"){
+      this.ResponsQuestion.response1Value='0';
+      this.ResponsQuestion.response2Value='0';
+      this.ResponsQuestion.response3Value='0';
+      this.ResponsQuestion.response4Value='0';
+      this.ResponsQuestion.response5Value='1';
+    }
+  }
+  clear(){
+    this.SendSuccess=false;
+  }
+  ngOnInit() {
+    this.SendSuccess=false;
+    this.quetionForm = this.formBuilder.group({
+      response: ['', Validators.required],
+    })
+  }
+  fetche_question(){
+    this.service.fetchQuestion().subscribe(
+        (data)=>{
+          console.log(data['allData'])
+          this.result= data.valueOf()['allData'][0]
+          this.question_onvan=this.result['question']
+          this.stringResponse1=this.result['stringResponse1']
+          this.stringResponse2=this.result['stringResponse2']
+          this.stringResponse3=this.result['stringResponse3']
+          this.stringResponse4=this.result['stringResponse4']
+          this.stringResponse5=this.result['stringResponse5']
+          this.ResponsQuestion.questionUUID=this.result['uuid']
+        }
+        ,
+        (error)=>{
+          console.log(error)
+        }
+    )}
+
+  OnSubmit(){
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.quetionForm.invalid) {
+      return;
+    }
+// this.spinner.show();
+    console.log(JSON.stringify(this.quetionForm.value));
+    this.Fetche_RadioButton(this.quetionForm.value);
+    this.SendSuccess=false;
+    console.log(this.ResponsQuestion);
+    //
+    this.ResponsQuestion.userAgent='rasoul';
+
+    this.service.Post_createPublicPolling(this.ResponsQuestion).subscribe(
+        (data) =>{
+          // this.spinner.hide();
+          this.SendSuccess=true;
+          console.log("نظرسنجی ثبتش شد"+data);
+
+        },
+        (error: any) => {
+          this.router.navigate(['/error404']);
+        }
+
+    );
+
+  }
+  get f() { return this.quetionForm.controls; }
+  findPollingOfQuestion(){
+    this.service.findPollingOfQuestion(this.ResponsQuestion.questionUUID).subscribe(
+        (data)=> {
+          this.countResponse1Value=0;
+          this.countResponse2Value=0;
+          this.countResponse3Value=0;
+          this.countResponse4Value=0;
+          this.countResponse5Value=0;
+          this.lenquestion=0;
+          console.log(data.valueOf()['allData'])
+          var lenquestion=data.valueOf()['allData'];
+          this.lenquestion=lenquestion.valueOf().length;
+          for(var i=0;i<lenquestion.valueOf().length;i++){
+            var response1Value= data.valueOf()['allData'][i];
+            if(response1Value['response1Value']==1){
+              this.countResponse1Value++;
+            }
+            if(response1Value['response2Value']==1){
+              this.countResponse2Value++;
+            }
+            if(response1Value['response3Value']==1){
+              this.countResponse3Value++;
+            }
+            if(response1Value['response4Value']==1){
+              this.countResponse4Value++;
+            }
+            if(response1Value['response5Value']==1){
+              this.countResponse5Value++;
+            }
+          }
+          console.log(this.countResponse1Value);
+          console.log(this.countResponse2Value);
+          console.log(this.countResponse3Value);
+          console.log(this.countResponse4Value);
+          console.log(this.countResponse5Value);
+        }
+    )}
+
+
+}
