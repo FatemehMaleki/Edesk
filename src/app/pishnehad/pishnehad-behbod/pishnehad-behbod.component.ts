@@ -4,6 +4,7 @@ import {WebserviceService} from '../../service/webservice.service';
 import {HttpClient} from '@angular/common/http';
 import {MatDialog} from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-pishnehad-behbod',
@@ -43,7 +44,7 @@ export class PishnehadBehbodComponent implements OnInit {
 
   get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
 
-  constructor(private _formBuilder: FormBuilder,private service:WebserviceService,private http:HttpClient,public dialog: MatDialog, private spinner: NgxSpinnerService) {
+  constructor(private _formBuilder: FormBuilder,private service:WebserviceService,private http:HttpClient,public dialog: MatDialog, private spinner: NgxSpinnerService,private router:Router) {
     this.fetche_ProcessUUID();
     this.areas = new Array<Array<string>>();
   }
@@ -63,17 +64,13 @@ export class PishnehadBehbodComponent implements OnInit {
               // console.log( this.processUUID[item])
             }
           }
-          console.log(data)
 
         }
     )
   }
   findIndex(){
     this.index = this.onvan.findIndex(item => item === this.processUUIDOnvan);
-    // this.processUUIDOnvan=this.user.processUUID;
-    console.log(this.processUUIDOnvan)
     this.user.processUUID=this.processUUID[this.index];
-    console.log("index="+this.index+this.user.processUUID+this.processUUIDOnvan);
   }
   ngOnInit() {
     this.formGroup = this._formBuilder.group({
@@ -115,14 +112,12 @@ export class PishnehadBehbodComponent implements OnInit {
           this.isEditable = false;
           this.result=true;
           this.x = data.valueOf()['allData'][0]
-          // this.step1=data['allData'];
-          console.log("درخواست ثبت شد"+data);
-          // this.step1=this.step1[0];
           this.codeRahgiri=this.x['codeRahgiri']
           this.resultOnvan=data['resultOnvan'];
-          // console.log("kod rahgiri="+this.codeRahgiri)
         },
-        (err) => console.log('error='+err)
+        (error) => {
+          this.router.navigate(['/error']);
+        }
     );
 
   }

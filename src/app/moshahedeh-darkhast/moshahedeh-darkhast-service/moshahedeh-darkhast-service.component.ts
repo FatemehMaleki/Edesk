@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WebserviceService} from '../../service/webservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-moshahedeh-darkhast-service',
@@ -19,7 +20,7 @@ export class MoshahedehDarkhastServiceComponent implements OnInit {
   submitted=false;
   allRef;
   allResult;
-  constructor(private  service:WebserviceService,private spinner: NgxSpinnerService) {
+  constructor(private  service:WebserviceService,private spinner: NgxSpinnerService,private router:Router) {
 
   }
 
@@ -30,12 +31,10 @@ export class MoshahedehDarkhastServiceComponent implements OnInit {
     this.spinner.show();
     var lengthcodeRahgiri= new String(this.codeRahgiri);
     if (lengthcodeRahgiri.length<=0) {
-      console.log("کد رهگیری را وارد نمائید");
       this.NAP_SUCCEED=false;
       this.NAP_ERROR=false;
       this.empetyCodeRahgiri=true;
     }
-    //AA5M45
     else {
       this.service.fetchMoshahedehNatije(this.codeRahgiri).subscribe(
           (data) => {
@@ -46,13 +45,14 @@ export class MoshahedehDarkhastServiceComponent implements OnInit {
               this.NAP_SUCCEED=true;
               this.allRef=data.valueOf()['allRef'];
               this.allResult=data.valueOf()['allResult'];
-              console.log(this.allRef);
             } else {
               this.NAP_ERROR=true;
               this.NAP_SUCCEED=false;
               this.empetyCodeRahgiri=false;
-              console.log("کد رهگیری معتبر نیست");
             }
+          },
+          (error)=>{
+            this.router.navigate(['/error']);
           })
     }
 

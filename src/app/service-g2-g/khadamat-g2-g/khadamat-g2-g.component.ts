@@ -120,7 +120,7 @@ export class KhadamatG2GComponent implements OnInit {
         }
         ,
         (error: any) => {
-          // this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
     )
   }

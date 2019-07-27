@@ -51,9 +51,12 @@ const routes: Routes = [
     path: 'taghirdarkhast',
     loadChildren: './taghirdarkhast/taghirdarkhast.module#TaghirdarkhastModule'
   },
-
-    // redirectTo: '',
-    // pathMatch: 'full'
+  {path:'error',
+    loadChildren: './errorserver/errorserver.module#ErrorserverModule'
+  },
+  {path:'**',
+    loadChildren: './notfoundpage/notfoundpage.module#NotfoundpageModule'
+  }
 ];
 
 @NgModule({

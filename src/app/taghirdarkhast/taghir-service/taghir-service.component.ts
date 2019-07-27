@@ -3,6 +3,7 @@ import {WebserviceService} from '../../service/webservice.service';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-taghir-service',
@@ -46,7 +47,7 @@ export class TaghirServiceComponent implements OnInit {
   NAP_ERROR=false;
   NAP_SUCCEED=false;
   get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
-  constructor(private service:WebserviceService,private http:HttpClient,public router: Router,private route: ActivatedRoute,private _formBuilder:FormBuilder) {
+  constructor(private service:WebserviceService,private http:HttpClient,public router: Router,private route: ActivatedRoute,private _formBuilder:FormBuilder,private spinner:NgxSpinnerService) {
     this.fetche_ProcessUUID();
   }
   fetche_ProcessUUID(){
@@ -61,20 +62,16 @@ export class TaghirServiceComponent implements OnInit {
               item=item+1;
               this.onvan[item] = this.x['onvan']
               this.processUUID[item]=this.x['uuid']
-              // console.log( this.processUUID[item])
             }
           }
-          console.log(data)
+
 
         }
     )
   }
   findIndex(){
     this.index = this.onvan.findIndex(item => item === this.processUUIDOnvan);
-    // this.processUUIDOnvan=this.user.processUUID;
-    console.log(this.processUUIDOnvan)
     this.user.processUUID=this.processUUID[this.index];
-    console.log("index="+this.index+this.user.processUUID+this.processUUIDOnvan);
   }
   ngOnInit() {
 
@@ -109,12 +106,11 @@ export class TaghirServiceComponent implements OnInit {
 
   }
   onSubmit(){
-    // this.spinner.show();
+    this.spinner.show();
     this.user.codeRahgiri=this.code_rahgiri;
     this.service.fetchCodeRahgiri(this.code_rahgiri).subscribe(
         (data)=>{
-          // this.spinner.hide();
-          console.log("codeRahgiri"+data['codeRahgiri']);
+          this.spinner.hide();
           if(data['codeRahgiri']!=null) {
             this.NAP_SUCCEED=true;
             this.user.firstName = data['firstName'];
@@ -126,8 +122,6 @@ export class TaghirServiceComponent implements OnInit {
             this.user.tozihat = data['tozihat'];
             // this.user.uuid = data['uuid'];
             this.flage = true;
-            this.router.navigate(['./'+data['codeRahgiri']], { relativeTo: this.route });
-
           }
           else {this.existCodeRaghiri=true;}
         }
@@ -155,16 +149,14 @@ export class TaghirServiceComponent implements OnInit {
     this.result=false;
   }
   OnSubmit2(){
-    // this.spinner.show();
+    this.spinner.show();
     this.result=false;
-    console.log("user="+this.user)
     this.service.Post_processUpload(this.user).subscribe(
         (data) =>{
-          // this.spinner.hide();
+          this.spinner.hide();
           this.isEditable = false;
           this.result=true;
           this.x = data.valueOf()['allData'][0]
-          console.log("درخواست ثبت شد"+data.valueOf());
           this.codeRahgiri=this.x['codeRahgiri']
           this.resultOnvan=data['resultOnvan'];
         },

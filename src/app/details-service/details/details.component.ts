@@ -65,7 +65,6 @@ export class DetailsComponent implements OnInit {
 
           //this.loading=false;
           this.spinner.hide();
-          console.log(data['allProcess'])
           this.x1=data.valueOf()['allProcess'][this.id]
           this.onvan=this.x1['onvan']
           this.addressMahalErae=this.x1['addressMahalErae']
@@ -94,17 +93,12 @@ export class DetailsComponent implements OnInit {
           this.processUrlOnvan2=this.x1['processUrlOnvan2']
           this.processUrlOnvan3=this.x1['processUrlOnvan3']
           this.bayanieSathTavafogh=this.x1['bayanieSathTavafogh']
-
           this.uuid=this.x1['uuid'];
-
           this.fetch_RR(this.uuid);
-          console.log("uuid=",this.uuid);
-
-
         }
         ,
         (error: any) => {
-          this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
     )
   }
@@ -118,17 +112,15 @@ export class DetailsComponent implements OnInit {
               this.result = data.valueOf()['allData'][i]
               this.request[i] = this.result['request'];
               this.response[i] = this.result['response'];
-              // console.log("سوالات" + this.lenght.valueOf().length)
             }
           }else {
             this.exsistQuestion=true;
-            console.log("سوالی طرح نشده" );
           }
 
         }
         ,
         (error: any) => {
-          this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
     )
   }

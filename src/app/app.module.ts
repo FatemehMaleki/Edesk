@@ -1,6 +1,6 @@
 
 import { SharedModule } from './shared/shared.module';
-import { TopMenuComponent } from './top-menu/top-menu.component';
+import { TopMenuComponent } from './layout/top-menu/top-menu.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 

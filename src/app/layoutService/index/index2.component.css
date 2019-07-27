@@ -3,8 +3,6 @@
   text-align: center;
   border-width: thin;
   border-style: solid;
-  /*z-index: 100;*/
-  /*background: url("../assets/img/border.jpg");*/
 }
 .de-flex{
   margin-top: 20px;
@@ -15,14 +13,12 @@
   font-family: IRANSansWeb_Bold;
   margin-left: 1px;
   margin-right: 1px;
-  /*z-index: -1;*/
-  /*position: fixed;*/
+
 }
 
-/*.container{*/
-  /*margin-left: 15px;*/
-  /*margin-right: -15px;*/
-/*}*/
+.modal-body{
+  font-family: IRANSansWeb_Bold;
+}
 .p-2{
   font-family: IRANSansWeb_Bold;
   font-size: 15px;
@@ -109,7 +105,7 @@ span.step {
   border: 2px solid #666;
   color: #666;
   text-align: center;
-  font: 32px Iransans-Bold, sans-serif;
+  font: 32px IRANSansWeb_Bold, sans-serif;
   font-family: IRANSansWeb_Bold;
 }
 span{
@@ -193,7 +189,7 @@ a.dropdown-item{
 
 /*}*/
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .text-center{
     font-family: IRANSansWeb_Bold;
     font-size: 20px;
@@ -223,35 +219,34 @@ a.dropdown-item{
   font-size: 20px;
   background-color: ghostwhite;
 }
-button{
-  font-family: IRANSansWeb!important;
+button ,h4{
+  font-family: IRANSansWeb_Bold!important;
   font-size: 15px!important;
 }
 .modal-title {
 
   margin-right: 100px!important;
 }
+::ng-deep mat-radio-button{
+  font-family: IRANSansWeb_Bold!important;
+  font-size: 13px;
+
+}
 .progress{
   font-family: IRANSansWeb_Bold;
   font-size: 16px;
 }
-.container{
-  /*margin-right: 350px!important;*/
-}
-/*@media (max-width: 768px) {*/
-/*.fixed-top {*/
-/*margin-right: 15px!important;*/
-/*margin-left: 15px!important;*/
-/*!*border-radius: 10px;*!*/
-/*}*/
-/*}*/
+
+
 .navbar {
-  /*margin-right: 120px!important;*/
-  /*margin-left: 90px!important;*/
+
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-/*.fixed-top{*/
-/*margin-right: 120px!important;*/
-/*margin-left: 90px!important;*/
-/*}*/
+
+.modal-content {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: right;
+
+}

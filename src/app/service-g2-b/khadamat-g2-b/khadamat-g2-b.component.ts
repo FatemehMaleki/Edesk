@@ -37,7 +37,7 @@ export class KhadamatG2BComponent implements OnInit {
         (data)=>{
           //this.loading=false;
           this.spinner.hide();
-          console.log(data)
+          // console.log(data)
           this.x=data.valueOf()['allProcess'][3]
           this.onvan[0]=this.x['onvan']
           this.processCode[0]=this.x['processCode']
@@ -53,7 +53,7 @@ export class KhadamatG2BComponent implements OnInit {
 
         },
         (error: any) => {
-          // this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
     )
 

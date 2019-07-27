@@ -3,6 +3,8 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '
 import {WebserviceService} from '../../service/webservice.service';
 import {HttpClient} from '@angular/common/http';
 import {MatDialog} from '@angular/material';
+import {NgxSpinnerService} from 'ngx-spinner';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-service-shekait',
@@ -40,42 +42,37 @@ export class ServiceShekaitComponent implements OnInit {
   nameFormGroup: FormGroup;
   get formArray(): AbstractControl | null { return this.formGroup.get('formArray'); }
 
-  constructor(private _formBuilder: FormBuilder,private service:WebserviceService,private  http:HttpClient,public dialog: MatDialog) {
+  constructor(private _formBuilder: FormBuilder,private service:WebserviceService,private  http:HttpClient,public dialog: MatDialog,private spinner:NgxSpinnerService,private router:Router) {
     this.fetche_ProcessUUID();
     this.areas = new Array<Array<string>>();
 
   }
 
   OnSubmit(){
-    // this.spinner.show();
+    this.spinner.show();
     this.user.saveOrUpdate='save';
     this.codeRahgiri='';
     this.result=false;
     this.service.Post_processUpload(this.user).subscribe(
         (data) =>{
-          // this.spinner.hide();
+          this.spinner.hide();
           this.isEditable = false;
           this.result=true;
           this.x = data.valueOf()['allData'][0]
-          // this.step1=data['allData'];
-          console.log("شکایت ثب شد"+data);
-          // this.step1=this.step1[0];
           this.codeRahgiri=this.x['codeRahgiri']
           this.resultOnvan=data['resultOnvan'];
 
         },
         (err) => {
           this.result=false;
-          console.log('error='+err)}
+          this.router.navigate(['/error']);
+        }
     );
 
   }
   findIndex(){
     this.index = this.onvan.findIndex(item => item === this.processUUIDOnvan);
-    // this.processUUIDOnvan=this.user.processUUID;
-    console.log(this.processUUIDOnvan)
     this.user.processUUID=this.processUUID[this.index];
-    console.log("index="+this.index+this.user.processUUID+this.processUUIDOnvan);
   }
   fetche_ProcessUUID(){
     var item:number=-1;
@@ -93,18 +90,9 @@ export class ServiceShekaitComponent implements OnInit {
               this.onvan[index] = indices[index]
               this.processUUID[index]=this.x['uuid']
               index = array.indexOf(element, index + 1);
-              console.log(indices);
             }
-            // this.onvan[0] = indices[0]
-            // this.processUUID[1]=indices[1]
-            // if(index==0){
-            //   item=item+1;
-            //   this.onvan[item] = this.x['onvan']
-            //   this.processUUID[item]=this.x['uuid']
-            //   // console.log( this.processUUID[item])
-            // }
+
           }
-          console.log(data)
 
         }
     )

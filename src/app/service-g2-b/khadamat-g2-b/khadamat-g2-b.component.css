@@ -13,8 +13,17 @@
 }
 .view img {
     margin-right: 60px!important;
+    height: 170px;
+    width: 200px
 }
-@media (max-width:768px ) {
+@media (max-width: 991px) and (min-width: 768px) {
+    .view img {
+        height: 170px;
+        width: 189px;
+       float: left;
+    }
+}
+@media (max-width:767px ) {
     .view img {
         margin-right: 30px!important;
     }

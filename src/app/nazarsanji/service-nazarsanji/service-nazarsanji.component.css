@@ -25,19 +25,19 @@ table {
 }
 
 table{
-    font-family: Iransans-Light;
+    font-family: IRANSansWeb_Bold;
     font-size: 21px!important;
 
 
 }
 table.table thead th{
-    font-family: Iransans-Light;
+    font-family: IRANSansWeb_Bold;
     font-size: 16px!important;
     background: #2e6da4;
     color: white;
 }
 table.table td{
-    font-family: Iransans-Light;
+    font-family: IRANSansWeb_Bold;
     font-size: 12px!important;
     color: blue;
 
@@ -49,7 +49,7 @@ hr {
     /*border-width: thin;*/
 }
 .btn.btn-primary{
-    font-family: Iransans-Light;
+    font-family: IRANSansWeb_Bold;
     font-size: 15px;
 
 }

@@ -5,7 +5,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { IndexComponent } from './index/index.component';
 import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Mainbody2Component } from './mainbody2/mainbody2.component';
-import {TopMenuComponent} from '../top-menu/top-menu.component';
+import {TopMenuComponent} from './top-menu/top-menu.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
 import {MainbodyComponent} from './mainbody/mainbody.component';

@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {WebserviceService} from '../../service/webservice.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-index2',
@@ -41,7 +42,7 @@ export class Index2Component implements OnInit {
   SendSuccess:boolean=false;
   indexChecked;
 
-  constructor(private service:WebserviceService,private  http:HttpClient,private formBuilder:FormBuilder,private router:Router) {
+  constructor(private service:WebserviceService,private  http:HttpClient,private formBuilder:FormBuilder,private router:Router,private spinner:NgxSpinnerService) {
     this.fetche_question();
     this.SendSuccess=false;
   }
@@ -95,7 +96,6 @@ export class Index2Component implements OnInit {
   fetche_question(){
     this.service.fetchQuestion().subscribe(
         (data)=>{
-          console.log(data['allData'])
           this.result= data.valueOf()['allData'][0]
           this.question_onvan=this.result['question']
           this.stringResponse1=this.result['stringResponse1']
@@ -107,7 +107,7 @@ export class Index2Component implements OnInit {
         }
         ,
         (error)=>{
-          console.log(error)
+            this.router.navigate(['/error']);
         }
     )}
 
@@ -118,23 +118,19 @@ export class Index2Component implements OnInit {
     if (this.quetionForm.invalid) {
       return;
     }
-// this.spinner.show();
-    console.log(JSON.stringify(this.quetionForm.value));
+this.spinner.show();
     this.Fetche_RadioButton(this.quetionForm.value);
     this.SendSuccess=false;
-    console.log(this.ResponsQuestion);
-    //
     this.ResponsQuestion.userAgent='rasoul';
 
     this.service.Post_createPublicPolling(this.ResponsQuestion).subscribe(
         (data) =>{
-          // this.spinner.hide();
+          this.spinner.hide();
           this.SendSuccess=true;
-          console.log("نظرسنجی ثبتش شد"+data);
 
         },
         (error: any) => {
-          this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
 
     );
@@ -150,7 +146,6 @@ export class Index2Component implements OnInit {
           this.countResponse4Value=0;
           this.countResponse5Value=0;
           this.lenquestion=0;
-          console.log(data.valueOf()['allData'])
           var lenquestion=data.valueOf()['allData'];
           this.lenquestion=lenquestion.valueOf().length;
           for(var i=0;i<lenquestion.valueOf().length;i++){
@@ -171,11 +166,7 @@ export class Index2Component implements OnInit {
               this.countResponse5Value++;
             }
           }
-          console.log(this.countResponse1Value);
-          console.log(this.countResponse2Value);
-          console.log(this.countResponse3Value);
-          console.log(this.countResponse4Value);
-          console.log(this.countResponse5Value);
+
         }
     )}
 

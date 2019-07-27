@@ -67,7 +67,7 @@ export class WebserviceService {
     return this.http.post<any>(url,data,this.headers);
 
   }
-Post_createPublicPolling(data:any){
+  Post_createPublicPolling(data:any){
   const url = 'http://185.198.252.57:4444/rest/napedeskws/createPublicPolling';
   return this.http.post<any>(url,data,this.headers);
 }

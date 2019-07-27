@@ -1,0 +1,105 @@
+*{
+    font-family: IRANSansWeb_Bold;
+}
+a{
+    font-family: IRANSansWeb_Bold!important;
+    font-size: 14px!important;
+}
+
+a.dropdown-item{
+    font-size: 12px!important;
+}
+.navbar-dark{
+    font-family: IRANSansWeb_Bold;
+    font-size: 15px;
+    color: white;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.bg-dark {
+    margin-top: -5px;
+    background-color: #2196F3 !important;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: white !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #060705;
+}
+.navbar-dark .navbar-toggler {
+    border-color: #ffc107;
+}
+.text-center{
+    font-family: IRANSansWeb_Bold;
+    font-size: 30px;
+
+}
+
+@media (max-width: 768px) {
+    .text-center{
+        font-family: IRANSansWeb_Bold;
+        font-size: 20px;
+    }
+    /*nav.double-nav{*/
+        /*height: 50px;*/
+    /*}*/
+    /*.navbar-collapse.collapse{*/
+       /*height: 100px!important;*/
+    /*}*/
+
+
+}
+.navbar-dark .navbar-nav .nav-link {
+
+    text-align: right!important;
+}
+.fab.fa-instagram{
+    font-family: "Font Awesome 5 Pro"!important;
+}
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    color: var(--ck-color-base-foreground);
+    transition: .35s;
+}
+.navbar.navbar-light .navbar-toggler {
+    color: var(--ck-color-button-cancel);
+    font-size: 20px;
+    background-color: ghostwhite;
+}
+button{
+    font-family: IRANSansWeb!important;
+    font-size: 15px!important;
+}
+.modal-title {
+
+    margin-right: 100px!important;
+}
+.progress{
+    font-family: IRANSansWeb_Bold;
+    font-size: 16px;
+}
+.container{
+    /*margin-right: 350px!important;*/
+}
+/*@media (max-width: 768px) {*/
+/*.fixed-top {*/
+    /*margin-right: 15px!important;*/
+    /*margin-left: 15px!important;*/
+    /*!*border-radius: 10px;*!*/
+/*}*/
+/*}*/
+.navbar {
+    /*margin-right: 120px!important;*/
+    /*margin-left: 90px!important;*/
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.modal-content {
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: right;
+
+}

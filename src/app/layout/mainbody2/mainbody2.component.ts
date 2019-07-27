@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {WebserviceService} from '../../service/webservice.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mainbody2',
@@ -32,7 +33,7 @@ export class Mainbody2Component implements OnInit {
 
   SendSuccess:boolean=false;
   indexChecked;
-  constructor(private service:WebserviceService,private  http:HttpClient,private formBuilder:FormBuilder ) {
+  constructor(private service:WebserviceService,private  http:HttpClient,private formBuilder:FormBuilder,private router:Router) {
     this.fetche_question();
     this.SendSuccess=false;
   }
@@ -86,7 +87,6 @@ export class Mainbody2Component implements OnInit {
   fetche_question(){
     this.service.fetchQuestion().subscribe(
         (data)=>{
-          console.log(data['allData'])
           this.result= data.valueOf()['allData'][0]
           this.question_onvan=this.result['question']
           this.stringResponse1=this.result['stringResponse1']
@@ -97,8 +97,8 @@ export class Mainbody2Component implements OnInit {
           this.ResponsQuestion.questionUUID=this.result['uuid']
         }
         ,
-        (error)=>{
-          console.log(error)
+        (error: any) => {
+          this.router.navigate(['/error']);
         }
     )}
 
@@ -110,19 +110,16 @@ export class Mainbody2Component implements OnInit {
       return;
     }
 
-    console.log(JSON.stringify(this.quetionForm.value));
     this.Fetche_RadioButton(this.quetionForm.value)
     this.SendSuccess=false;
-    console.log(this.ResponsQuestion);
     this.ResponsQuestion.userAgent='rasoul';
     this.service.Post_createPublicPolling(this.ResponsQuestion).subscribe(
         (data) =>{
           this.SendSuccess=true;
-          console.log("نظرسنجی ثبتش شد"+data);
         },
-        (err) => {
-          // this.result=false;
-          console.log('error='+err)}
+        (error: any) => {
+          this.router.navigate(['/error']);
+        }
     );
 
   }

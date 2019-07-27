@@ -41,7 +41,6 @@ export class ServiceNazarsanjiComponent implements OnInit {
   }
   index;
   processUUIDOnvan;
-  type_tahsilat:string[]=[];
 
   answer: string[] = ['خیلی کم', 'کم', 'متوسط', 'زیاد'];
   // public Editor = ClassicEditor;
@@ -57,12 +56,9 @@ export class ServiceNazarsanjiComponent implements OnInit {
   }
   findIndex(){
     var uuid:string;
-    // this.processUUIDOnvan=this.f.processUUID.value;
     this.index = this.onvan.findIndex(item => item === this.f.processUUID.value);
     uuid=this.processUUID[this.index];
-
     this.f.processUUID.setValue(uuid);
-    console.log( this.f.processUUID.value);
     this.SendSuccess=false;
   }
   fetche_ProcessUUID(){
@@ -79,10 +75,8 @@ export class ServiceNazarsanjiComponent implements OnInit {
               item=item+1;
               this.onvan[item] = this.x['onvan']
               this.processUUID[item]=this.x['uuid']
-              // console.log( this.processUUID[item])
             }
           }
-          console.log(data)
 
         }
     )
@@ -117,14 +111,12 @@ export class ServiceNazarsanjiComponent implements OnInit {
   get f() { return this.formGroupUser.controls; }
   OnSubmit(){
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.formGroupUser.invalid) {
       return;
     }
 
-    // console.log(JSON.stringify(this.formGroupUser.value));
     //     //find index uuid
+    this.spinner.show();
     var uuid:string;
     this.index = this.onvan.findIndex(item => item === this.f.processUUID.value);
     uuid=this.processUUID[this.index];
@@ -153,12 +145,11 @@ export class ServiceNazarsanjiComponent implements OnInit {
     this.user.answer16=this.f.answer16.value;
     this.service.Post_createFixedPolling(this.user).subscribe(
         (data) =>{
+          this.spinner.hide();
           this.SendSuccess=true;
-
-          console.log(data);
         },
         (error: any) => {
-          this.router.navigate(['/error404']);
+          this.router.navigate(['/error']);
         }
     );
 
